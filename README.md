@@ -1,6 +1,6 @@
-# Looking For Gamers (LFG)
+# Be Herd
 
-Looking for Gamers – LFG – Is an app designed by gamers, for gamers. This app will allow you to select what roles you are interested in playing, and post yourself onto a Looking For Group board to find like minded individuals looking to climb rank, play casually, or just have fun with. The app also allows groups to post they are Looking for More, so if you want to join a full group of people you can search for groups looking for something you are wanting to do. This app will hopefully help curb the feeling of always playing alone when it comes to games, this is a way for you to connect with others to enjoy playing games with, or to climb ranked together.
+Be Herd is the latest way to celebrate a birthday, anniversary, or any other special occasion in the most hilarious way. We want to help you celebrate any special occasion for that special person by filling their yard with a herd of cow lawn ordinates and your message congratulating them on the occasion. After several days (time depending on the package) we will go back and pick up the herd. If someone has moved their herd to your lawn, you have an opportunity to revenge them for a special price. Let your message Be Herd.
 
 
 
