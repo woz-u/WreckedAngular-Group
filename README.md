@@ -1,3 +1,11 @@
+# Be Herd
+
+Be Herd is the latest way to celebrate a birthday, anniversary, or any other special occasion in the most hilarious way. We want to help you celebrate any special occasion for that special person by filling their yard with a herd of cow lawn ordinates and your message congratulating them on the occasion. After several days (time depending on the package) we will go back and pick up the herd. If someone has moved their herd to your lawn, you have an opportunity to revenge them for a special price. Let your message Be Herd.
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
