@@ -1,16 +1,13 @@
 {
-  "name": "lfg",
+  "name": "tailwindtemplate",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@headlessui/react": "^1.6.4",
-    "@headlessui/vue": "^1.6.4",
     "@heroicons/react": "^1.0.6",
-    "@heroicons/vue": "^1.0.6",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
-    "firebase": "^9.8.2",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-scripts": "5.0.1",
@@ -40,22 +37,14 @@
       "last 1 safari version"
     ]
   },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
   "devDependencies": {
+    "@tailwindcss/aspect-ratio": "^0.4.0",
     "@tailwindcss/forms": "^0.5.2",
-    "tailwind": "^4.0.0",
-    "tailwindcss": "^3.0.24"
-  },
-  "description": "Looking for Gamers – LFG – Is an app designed by gamers, for gamers. This app will allow you to select what roles you are interested in playing, and post yourself onto a Looking For Group board to find like minded individuals looking to climb rank, play casually, or just have fun with. The app also allows groups to post they are Looking for More, so if you want to join a full group of people you can search for groups looking for something you are wanting to do. This app will hopefully help curb the feeling of always playing alone when it comes to games, this is a way for you to connect with others to enjoy playing games with, or to climb ranked together.",
-  "main": "tailwind.config.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/woz-u/WreckedAngular-Group.git"
+    "tailwindcss": "^3.1.1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/woz-u/WreckedAngular-Group/issues"
-  },
-  "homepage": "https://github.com/woz-u/WreckedAngular-Group#readme"
+  "license": "ISC"
 }

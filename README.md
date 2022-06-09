@@ -1,11 +1,3 @@
-# Looking For Gamers (LFG)
-
-Looking for Gamers – LFG – Is an app designed by gamers, for gamers. This app will allow you to select what roles you are interested in playing, and post yourself onto a Looking For Group board to find like minded individuals looking to climb rank, play casually, or just have fun with. The app also allows groups to post they are Looking for More, so if you want to join a full group of people you can search for groups looking for something you are wanting to do. This app will hopefully help curb the feeling of always playing alone when it comes to games, this is a way for you to connect with others to enjoy playing games with, or to climb ranked together.
-
-
-
-
-
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
