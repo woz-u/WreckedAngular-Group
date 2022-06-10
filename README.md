@@ -5,6 +5,10 @@ Be Herd is the latest way to celebrate a birthday, anniversary, or any other spe
 
 
 
+# This app is based off the React.JS framework and the utilization of Tailwind
+
+
+
 
 # Getting Started with Create React App
 
