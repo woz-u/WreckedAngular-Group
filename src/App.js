@@ -8,6 +8,8 @@ import {
   XIcon,
 } from "@heroicons/react/outline";
 import Basicpackage from "./Basicpackage";
+import BeHerd from "./Assets/BeHerdBackground.png";
+import BeHerdLogo from "./Assets/BeHerdLogo.png";
 
 const currencies = ["USD", "CAD"];
 const navigation = {
@@ -49,46 +51,10 @@ const navigation = {
         },
       ],
     },
-    {
-      name: "Men",
-      featured: [
-        {
-          name: "New Arrivals",
-          href: "#",
-          imageSrc:
-            "https://tailwindui.com/img/ecommerce-images/mega-menu-01-men-category-01.jpg",
-          imageAlt:
-            "Hats and sweaters on wood shelves next to various colors of t-shirts on hangers.",
-        },
-        {
-          name: "Basic Tees",
-          href: "#",
-          imageSrc:
-            "https://tailwindui.com/img/ecommerce-images/mega-menu-01-men-category-02.jpg",
-          imageAlt: "Model wearing light heather gray t-shirt.",
-        },
-        {
-          name: "Accessories",
-          href: "#",
-          imageSrc:
-            "https://tailwindui.com/img/ecommerce-images/mega-menu-01-men-category-03.jpg",
-          imageAlt:
-            "Grey 6-panel baseball hat with black brim, black mountain graphic on front, and light heather gray body.",
-        },
-        {
-          name: "Carry",
-          href: "#",
-          imageSrc:
-            "https://tailwindui.com/img/ecommerce-images/mega-menu-01-men-category-04.jpg",
-          imageAlt:
-            "Model putting folded cash into slim card holder olive leather wallet with hand stitching.",
-        },
-      ],
-    },
   ],
   pages: [
-    { name: "Company", href: "#" },
-    { name: "Stores", href: "#" },
+    { name: "About Us", href: "#" },
+    { name: "Reviews", href: "#" },
   ],
 };
 const categories = [
@@ -376,14 +342,14 @@ export default function Example() {
         {/* Decorative image and overlay */}
         <div aria-hidden="true" className="absolute inset-0 overflow-hidden">
           <img
-            src="https://c0.wallpaperflare.com/preview/764/659/622/fur-animal-texture-fabric.jpg"
+            src={BeHerd}
             alt="/"
             className="w-full h-full object-center object-cover"
           />
         </div>
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-gray-900 opacity-50"
+          className="absolute inset-0 bg-gray-900 opacity-20"
         />
 
         {/* Navigation */}
@@ -455,11 +421,7 @@ export default function Example() {
                     <div className="hidden lg:flex-1 lg:flex lg:items-center">
                       <a href="#">
                         <span className="sr-only">Workflow</span>
-                        <img
-                          className="h-8 w-auto"
-                          src="https://tailwindui.com/img/logos/workflow-mark.svg?color=white"
-                          alt=""
-                        />
+                        <img className="h-8 w-auto" src={BeHerdLogo} alt="/" />
                       </a>
                     </div>
 
@@ -511,6 +473,7 @@ export default function Example() {
                                                 <div className="aspect-w-1 aspect-h-1 rounded-md bg-gray-100 overflow-hidden group-hover:opacity-75">
                                                   <img
                                                     src={item.imageSrc}
+                                                    logo
                                                     alt={item.imageAlt}
                                                     className="object-center object-cover"
                                                   />
@@ -577,11 +540,7 @@ export default function Example() {
                     {/* Logo (lg-) */}
                     <a href="#" className="lg:hidden">
                       <span className="sr-only">Workflow</span>
-                      <img
-                        src="https://tailwindui.com/img/logos/workflow-mark.svg?color=white"
-                        alt=""
-                        className="h-8 w-auto"
-                      />
+                      <img src="BeHerdLogo.png" alt="" className="h-8 w-auto" />
                     </a>
 
                     <div className="flex-1 flex items-center justify-end">
@@ -637,23 +596,17 @@ export default function Example() {
 
         <div className="background:inherit background-clip:text color:transparent filter:invert[1] relative max-w-3xl mx-auto py-32 px-6 flex flex-col items-center text-center sm:py-64 lg:px-0">
           <h1 className="text-4xl font-extrabold tracking-tight text-white lg:text-6xl">
-            About Be Herd
+            Be Herd
           </h1>
-          <p className="mt-4 text-2xl text-white">
-            Be Herd is the latest way to celebrate a birthday, anniversary, or
-            any other special occasion in the most hilarious way. We want to
-            help you celebrate any special occasion for that special person by
-            filling their yard with a herd of cow lawn ordinates and your
-            message congratulating them on the occasion. After several days
-            depending on the package, we will go back and pick up the herd. If
-            someone has moved their herd to your lawn, you have an opportunity
-            to revenge them for a special price. Let your message Be Herd.
-          </p>
+          <h2 className="mt-4 text-4xl text-white font-bold">
+            The latest way to celebrate a birthday, anniversary, or any other
+            special occasion in the most hilarious way.
+          </h2>
           <a
             href="#"
-            className="mt-8 inline-block bg-white border border-transparent rounded-md py-3 px-8 text-base font-medium text-gray-900 hover:bg-gray-100"
+            className="mt-8 inline-block bg-transparent  border-transparent rounded-md py-3 px-8 text-base font-medium text-white hover:bg-white hover:text-black"
           >
-            Check out our packages!
+            Find out more!
           </a>
         </div>
       </div>
@@ -866,7 +819,7 @@ export default function Example() {
                   </ul>
                 </div>
                 <div>
-                  <h3 className="text-sm font-medium text-white">Company</h3>
+                  <h3 className="text-sm font-medium text-white">About Us</h3>
                   <ul role="list" className="mt-6 space-y-6">
                     {footerNavigation.company.map((item) => (
                       <li key={item.name} className="text-sm">
@@ -954,4 +907,3 @@ export default function Example() {
     </div>
   );
 }
-
