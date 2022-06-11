@@ -23,7 +23,7 @@ const navigation = {
           imageSrc:
             "https://tailwindui.com/img/ecommerce-images/mega-menu-category-01.jpg",
           imageAlt:
-            "Models sitting back to back, wearing Basic Tee in black and bone.",
+            "Models sitting back to back, wearing Basic Tee in black and bone....",
         },
         {
           name: "Advance",
