@@ -10,6 +10,11 @@ import {
 import Basicpackage from "./Basicpackage";
 import BeHerd from "./Assets/BeHerdBackground.png";
 import BeHerdLogo from "./Assets/BeHerdLogo.png";
+import Basic from "./Assets/Basic.png";
+import Advance from "./Assets/Advance.png";
+import Premium from "./Assets/Premium.png";
+import Revenge from "./Assets/Revenge.png";
+import Checkout from "./Checkout";
 
 const currencies = ["USD", "CAD"];
 const navigation = {
@@ -19,35 +24,35 @@ const navigation = {
       featured: [
         {
           name: "Basic",
-          href: "src/basicpackage.js",
+          href: "#",
           imageSrc:
-            "https://tailwindui.com/img/ecommerce-images/mega-menu-category-01.jpg",
+            "https://cdn.discordapp.com/attachments/938922482432376843/984923525494231051/1.png",
           imageAlt:
-            "Models sitting back to back, wearing Basic Tee in black and bone.",
+            "Basic Package",
         },
         {
           name: "Advance",
           href: "#",
           imageSrc:
-            "https://tailwindui.com/img/ecommerce-images/mega-menu-category-02.jpg",
+            "https://cdn.discordapp.com/attachments/938922482432376843/984923525729108008/2.png",
           imageAlt:
-            "Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees.",
+            "Advance Package",
         },
         {
           name: "Premium",
           href: "#",
           imageSrc:
-            "https://tailwindui.com/img/ecommerce-images/mega-menu-category-03.jpg",
+            "https://cdn.discordapp.com/attachments/938922482432376843/984923526001754232/3.png",
           imageAlt:
-            "Model wearing minimalist watch with black wristband and white watch face.",
+            "Premium Package",
         },
         {
           name: "Revenge",
           href: "#",
           imageSrc:
-            "https://tailwindui.com/img/ecommerce-images/mega-menu-category-04.jpg",
+            "https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fcdn.discordapp.com%2Fattachments%2F938922482432376843%2F985937296954130432%2FRevenge.png",
           imageAlt:
-            "Model opening tan leather long wallet with credit card pockets and cash pouch.",
+            "Revenge Package",
         },
       ],
     },
