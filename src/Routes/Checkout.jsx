@@ -22,11 +22,11 @@ const Checkout = () => {
     <div className="bg-gray-50">
       {/* Background color split screen for large screens */}
       <div
-        className="hidden lg:block fixed top-0 left-0 w-1/2 h-full bg-gray-50"
+        className="hidden lg:block fixed top-0 left-0 w-1/2 h-full bg-gray-900"
         aria-hidden="true"
       />
       <div
-        className="hidden lg:block fixed top-0 right-0 w-1/2 h-full bg-gray-50"
+        className="hidden lg:block fixed top-0 right-0 w-1/2 h-full bg-gray-700"
         aria-hidden="true"
       />
 
