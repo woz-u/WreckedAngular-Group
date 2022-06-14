@@ -8,14 +8,14 @@ import {
   ShoppingBagIcon,
   XIcon,
 } from "@heroicons/react/outline";
-import Basicpackage from "./basicpackage";
+import Basicpackage from "./BasicPackage";
 import BeHerd from "../Assets/BeHerdBackground.png";
 import BeHerdLogo from "../Assets/BeHerdLogo.png";
 import Basic from "../Assets/Basic.png";
 import Advance from "../Assets/Advance.png";
 import Premium from "../Assets/Premium.png";
 import Revenge from "../Assets/Revenge.png";
-import Checkout from "./checkout";
+import Checkout from "./Checkout";
 import { Link } from "react-router-dom";
 
 
@@ -27,7 +27,7 @@ const navigation = {
       featured: [
         {
           name: "Basic",
-          href: "/basicpackage",
+          href: "/BasicPackage",
           imageSrc:
             "https://cdn.discordapp.com/attachments/938922482432376843/984923525494231051/1.png",
           imageAlt:
@@ -162,7 +162,8 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Example() {
+export default function Home() {
+  
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
