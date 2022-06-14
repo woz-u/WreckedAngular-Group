@@ -1,5 +1,5 @@
 module.exports = {
-  content: ["./src/**/*.{html,js}"],
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {},
   },
@@ -8,3 +8,4 @@ module.exports = {
       require('@tailwindcss/aspect-ratio'),
   ],
 }
+
