@@ -2,17 +2,20 @@ import react from "react";
 import { Fragment } from 'react'; 
 import { Popover, Transition } from '@headlessui/react'; 
 import {ChevronUpIcon } from '@heroicons/react/solid';
-const products = [ { id: 1, name:'Micro Backpack', href: '#', price: '$70.00', color: 'Moss', size: '5L', imageSrc:'https://tailwindui.com/img/ecommerce-images/checkout-page-04-product-01.jpg',imageAlt: 'Moss green canvas compact backpack with double top zipper, zipper front pouch, and matching carry handle and backpack straps.', }] // More products...
+import Basic from "../Assets/basic.png";
+const products = [ { id: 1, name:'Basic Package', href: '/basicpackage', price: '$60.00' }] // More products..., imageSrc: Basic ,imageAlt: 'Basic Package',
 
-const Checkout = () => { return (
-<div className="bg-gray-50">
+const Checkout = () => { 
+  
+  return (
+<div className="bg-gray-500">
   {/* Background color split screen for large screens */}
   <div
-    className="hidden lg:block fixed top-0 left-0 w-1/2 h-full bg-gray-50"
+    className="hidden lg:block fixed top-0 left-0 w-1/2 h-full bg-gray-900"
     aria-hidden="true"
   />
   <div
-    className="hidden lg:block fixed top-0 right-0 w-1/2 h-full bg-gray-50"
+    className="hidden lg:block fixed top-0 right-0 w-1/2 h-full bg-gray-700"
     aria-hidden="true"
   />
 
@@ -32,12 +35,12 @@ const Checkout = () => { return (
 
         <ul
           role="list"
-          className="text-sm font-medium text-white divide-y divide-gray-50"
+          className="text-sm font-medium text-white divide-y divide-gray-900"
         >
           {products.map((product) => (
           <li key="{product.id}" className="flex items-start py-6 space-x-4">
             <img
-              src="{product.imageSrc}"
+              src= "https://cdn.discordapp.com/attachments/938922482432376843/984923525494231051/1.png"
               alt="{product.imageAlt}"
               className="flex-none w-20 h-20 rounded-md object-center object-cover"
             />
@@ -56,7 +59,7 @@ const Checkout = () => { return (
         >
           <div className="flex items-center justify-between">
             <dt className="text-white">Subtotal</dt>
-            <dd>$320.00</dd>
+            <dd>$60.00</dd>
           </div>
 
           <div className="flex items-center justify-between">
@@ -65,15 +68,15 @@ const Checkout = () => { return (
           </div>
 
           <div className="flex items-center justify-between">
-            <dt className="text-white">Taxes</dt>
-            <dd>$26.80</dd>
+          <dt className="text-white">Taxes</dt>
+            
           </div>
 
           <div
             className="flex items-center justify-between border-t border-white pt-6"
           >
             <dt className="text-white">Total</dt>
-            <dd className="text-white">$361.80</dd>
+            <dd className="text-white">$0.00</dd>
           </div>
         </dl>
 
@@ -88,7 +91,7 @@ const Checkout = () => { return (
                 className="w-full flex items-center py-6 font-medium"
               >
                 <span className="text-white mr-auto">Total</span>
-                <span className="text-white mr-2">$361.80</span>
+                <span className="text-white mr-2">$0.00</span>
                 <ChevronUpIcon
                   className="w-5 h-5 text-white"
                   aria-hidden="true"
@@ -126,7 +129,7 @@ const Checkout = () => { return (
                   <dl className="max-w-lg mx-auto space-y-6">
                     <div className="flex items-center justify-between">
                       <dt className="text-white">Subtotal</dt>
-                      <dd>$320.00</dd>
+                      <dd>$00.00</dd>
                     </div>
 
                     <div className="flex items-center justify-between">
@@ -136,7 +139,7 @@ const Checkout = () => { return (
 
                     <div className="flex items-center justify-between">
                       <dt className="text-white">Taxes</dt>
-                      <dd>$26.80</dd>
+                      <dd>$0.00</dd>
                     </div>
                   </dl>
                 </Popover.Panel>

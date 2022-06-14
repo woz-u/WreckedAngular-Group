@@ -11,7 +11,7 @@ import {
 import Basicpackage from "./basicpackage";
 import BeHerd from "../Assets/BeHerdBackground.png";
 import BeHerdLogo from "../Assets/BeHerdLogo.png";
-import Basic from "../Assets/Basic.png";
+import Basic from "../Assets/basic.png";
 import Advance from "../Assets/Advance.png";
 import Premium from "../Assets/Premium.png";
 import Revenge from "../Assets/Revenge.png";
