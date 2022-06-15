@@ -8,7 +8,10 @@ import {
   ShoppingBagIcon,
   XIcon,
 } from "@heroicons/react/outline";
-import Basicpackage from "../Routes/BasicPackage";
+import CalfPack from "../Routes/CalfPack";
+import CowPack from "../Routes/CowPack";
+import BullPack from "../Routes/BullPack";
+import MadCow from "../Routes/MadCow";
 import BeHerd from "../Assets/BeHerdBackground.png";
 import BeHerdLogo from "../Assets/BeHerdLogo.png";
 import Basic from "../Assets/Basic.png";
@@ -25,32 +28,32 @@ const navigation = {
       name: "Packages",
       featured: [
         {
-          name: "Basic",
-          href: "/BasicPackage",
+          name: "Calf Pack",
+          href: "/CalfPack",
           imageSrc:
             "https://cdn.discordapp.com/attachments/938922482432376843/984923525494231051/1.png",
-          imageAlt: "Basic Package",
+          imageAlt: "Calf Package",
         },
         {
-          name: "Advance",
-          href: "#",
+          name: "Cow Pack",
+          href: "/CowPack",
           imageSrc:
             "https://cdn.discordapp.com/attachments/938922482432376843/984923525729108008/2.png",
-          imageAlt: "Advance Package",
+          imageAlt: "Cow Pack",
         },
         {
-          name: "Premium",
-          href: "#",
+          name: "Bull Pack",
+          href: "/BullPack",
           imageSrc:
             "https://cdn.discordapp.com/attachments/938922482432376843/984923526001754232/3.png",
-          imageAlt: "Premium Package",
+          imageAlt: "Bull Pack",
         },
         {
-          name: "Revenge",
-          href: "#",
+          name: "The Mad Cow Special",
+          href: "/MadCow",
           imageSrc:
             "https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fcdn.discordapp.com%2Fattachments%2F938922482432376843%2F985937296954130432%2FRevenge.png",
-          imageAlt: "Revenge Package",
+          imageAlt: "MadCow",
         },
       ],
     },

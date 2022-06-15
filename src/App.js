@@ -8,7 +8,10 @@ import {
 import Home from "./Routes/Home";
 import About from "./Routes/About";
 import Checkout from "./Routes/Checkout";
-import BasicPackage from "./Routes/BasicPackage";
+import CalfPack from "./Routes/CalfPack";
+import CowPack from "./Routes/CowPack";
+import BullPack from "./Routes/BullPack";
+import MadCow from "./Routes/MadCow";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 
@@ -20,7 +23,10 @@ function App() {
         <Route path="/" to="/Home" element={<Home />} />
         <Route path="/About" element={<About />} />
         <Route path="/Checkout" element={<Checkout />} />
-        <Route path="/BasicPackage" element={<BasicPackage />} />
+        <Route path="/CalfPack" element={<CalfPack />} />
+        <Route path="/CowPack" element={<CowPack />} />
+        <Route path="/BullPack" element={<BullPack />} />
+        <Route path="/MadCow" element={<MadCow />} />
       </Routes>
       <Footer />
     </>
