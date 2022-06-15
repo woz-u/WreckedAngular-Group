@@ -8,7 +8,10 @@ import {
   ShoppingBagIcon,
   XIcon,
 } from "@heroicons/react/outline";
-import Basicpackage from "./BasicPackage";
+import CalfPack from "./CalfPack";
+import CowPack from "./CowPack";
+import BullPack from "./BullPack";
+import MadCow from "./MadCow";
 import BeHerd from "../Assets/BeHerdBackground.png";
 import BeHerdLogo from "../Assets/BeHerdLogo.png";
 import Basic from "../Assets/Basic.png";
@@ -78,19 +81,19 @@ export default function Home() {
                 id="social-impact-heading"
                 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl"
               >
-                <span className="block sm:inline">Checkout Our </span>
-                <span className="block sm:inline">Packages</span>
+                <span className="block sm:inline">Learn More </span>
+                <span className="block sm:inline">About Us!</span>
               </h2>
               <p className="mt-3 text-xl text-white text-bold">
                 Whether you're trying to celebrate someones special day or prank
                 your neighbor we have the perfect package for you. If you got
-                Herd'ed, check out our Revenge Special!
+                Herd'ed, check out our Revenge Special! To find out more about what Be Herd is click the button below.
               </p>
               <a
                 href="#"
                 className="mt-8 w-full block bg-white border border-transparent rounded-md py-3 px-8 text-base font-medium text-gray-900 hover:bg-gray-100 sm:w-auto"
               >
-                Our Packages
+                About Be Herd
               </a>
             </div>
           </div>

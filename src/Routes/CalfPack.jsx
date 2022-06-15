@@ -1,29 +1,30 @@
 
 const features = [
     {
-      name: 'Durable',
-      description: 'The leather cover and machined steel disc binding stand up to daily use for years to come.',
+      name: '$60.00 + Tax',
+      description: 'The Calf Pack includes the following.',
     },
     {
-      name: 'Refillable',
-      description: 'Buy it once and refill as often as you need. Subscribe and save on routine refills.',
+      name: 'Cows',
+      description: '20 cows placed in the yard of an unsuspecting friend or family member.',
     },
     {
-      name: 'Thoughtfully designed',
+      name: 'Special Message',
       description:
-        'The comfortable disc binding allows you to quickly rearrange pages or combine lined, graph, and blank refills.',
+        'A special message from you to the friend or family member to accompany the cows in the yard.',
     },
-    { name: 'Locally made', description: 'Responsibly and sustainably made real close to wherever you are, somehow.' },
+    { name: 'Time Period',
+      description: 'The Herd will stay in the yard with the sign for 3 days and includes delivery and pickup.' },
   ]
   
-  export default function Basicpackage() {
+  export default function CalfPack() {
     return (
       <div className="bg-white">
         <section aria-labelledby="features-heading" className="relative">
           <div className="aspect-w-3 aspect-h-2 overflow-hidden sm:aspect-w-5 lg:aspect-none lg:absolute lg:w-1/2 lg:h-full lg:pr-4 xl:pr-16">
             <img
-              src="https://tailwindui.com/img/ecommerce-images/confirmation-page-01-hero.jpg"
-              alt="Black leather journal with silver steel disc binding resting on wooden shelf with machined steel pen."
+              src="https://calfcare.ca/wp-content/uploads/2021/09/Nesting-score-2-scaled.jpg"
+              alt="Cows Everywhere! Who did this?"
               className="h-full w-full object-center object-cover lg:h-full lg:w-full"
             />
           </div>
@@ -31,12 +32,11 @@ const features = [
           <div className="max-w-2xl mx-auto pt-16 pb-24 px-4 sm:pb-32 sm:px-6 lg:max-w-7xl lg:pt-32 lg:px-8 lg:grid lg:grid-cols-2 lg:gap-x-8">
             <div className="lg:col-start-2">
               <h2 id="features-heading" className="font-medium text-gray-500">
-                Leatherbound Daily Journal
+                Details for the
               </h2>
-              <p className="mt-4 text-4xl font-extrabold text-gray-900 tracking-tight">All in the Details</p>
+              <p className="mt-4 text-4xl font-extrabold text-gray-900 tracking-tight">Calf Pack</p>
               <p className="mt-4 text-gray-500">
-                We've obsessed over every detail of this handcrafted journal to bring you the best materials for daily
-                use.
+                This Package is great for someone with a smaller yard that you want to congratulate or just give a good laugh to.
               </p>
   
               <dl className="mt-10 grid grid-cols-1 gap-y-10 gap-x-8 text-sm sm:grid-cols-2">
