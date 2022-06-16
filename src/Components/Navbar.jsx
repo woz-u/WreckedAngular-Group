@@ -61,7 +61,7 @@ const navigation = {
     },
   ],
   pages: [
-    { name: "About Us", href: "#" },
+    { name: "About Us", href: "/AboutUs" },
     { name: "Reviews", href: "#" },
   ],
 };
