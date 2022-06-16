@@ -31,10 +31,10 @@ const features = [
   
           <div className="max-w-2xl mx-auto pt-16 pb-24 px-4 sm:pb-32 sm:px-6 lg:max-w-7xl lg:pt-32 lg:px-8 lg:grid lg:grid-cols-2 lg:gap-x-8">
             <div className="lg:col-start-2">
-              <h2 id="features-heading" className="font-medium text-gray-500">
+              <h2 id="features-heading" className="font-medium text-indigo-400">
                 Details for the
               </h2>
-              <p className="mt-4 text-4xl font-extrabold text-gray-900 tracking-tight">Cow Pack</p>
+              <p className="mt-4 text-4xl font-extrabold text-indigo-600 tracking-tight">Cow Pack</p>
               <p className="mt-4 text-gray-500">
                 This Package is great for someone with a regular sized yard that you want to congratulate or just give a good laugh to.
               </p>
@@ -42,7 +42,7 @@ const features = [
               <dl className="mt-10 grid grid-cols-1 gap-y-10 gap-x-8 text-sm sm:grid-cols-2">
                 {features.map((feature) => (
                   <div key={feature.name}>
-                    <dt className="font-medium text-gray-900">{feature.name}</dt>
+                    <dt className="font-medium text-indigo-900">{feature.name}</dt>
                     <dd className="mt-2 text-gray-500">{feature.description}</dd>
                   </div>
                 ))}
