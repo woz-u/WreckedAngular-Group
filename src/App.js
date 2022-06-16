@@ -14,6 +14,8 @@ import BullPack from "./Routes/BullPack";
 import MadCow from "./Routes/MadCow";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
+import SignIn from "./Routes/SignIn";
+import SignUp from "./Routes/SignUp"
 
 function App() {
   return (
@@ -27,6 +29,8 @@ function App() {
         <Route path="/CowPack" element={<CowPack />} />
         <Route path="/BullPack" element={<BullPack />} />
         <Route path="/MadCow" element={<MadCow />} />
+        <Route path="/SignIn" element={<SignIn />} />
+        <Route path="/SignUp" element={<SignUp />} />
       </Routes>
       <Footer />
     </>
