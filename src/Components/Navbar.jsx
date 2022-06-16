@@ -20,6 +20,8 @@ import Premium from "../Assets/Premium.png";
 import Revenge from "../Assets/Revenge.png";
 import Checkout from "../Routes/Checkout";
 import { Link } from "react-router-dom";
+import SignIn from "../Routes/SignIn";
+import SignUp from "../Routes/SignUp";
 
 const currencies = ["USD", "CAD"];
 const navigation = {
@@ -191,7 +193,7 @@ function Header() {
                 <div className="border-t border-gray-200 py-6 px-4 space-y-6">
                   <div className="flow-root">
                     <a
-                      href="#"
+                      href="/SignUp"
                       className="-m-2 p-2 block font-medium text-gray-900"
                     >
                       Create an account
@@ -199,7 +201,7 @@ function Header() {
                   </div>
                   <div className="flow-root">
                     <a
-                      href="#"
+                      href="/SignIn"
                       className="-m-2 p-2 block font-medium text-gray-900"
                     >
                       Sign in
@@ -296,13 +298,13 @@ function Header() {
 
               <div className="flex items-center space-x-6">
                 <a
-                  href="#"
+                  href="/SignIn"
                   className="text-sm font-medium text-white hover:text-gray-100"
                 >
                   Sign in
                 </a>
                 <a
-                  href="#"
+                  href="/SignUp"
                   className="text-sm font-medium text-white hover:text-gray-100"
                 >
                   Create an account
@@ -391,7 +393,7 @@ function Header() {
                                                 aria-hidden="true"
                                                 className="mt-1"
                                               >
-                                                Shop now
+                                                Get Details
                                               </p>
                                             </div>
                                           ))}
@@ -469,7 +471,7 @@ function Header() {
                       {/* Cart */}
                       <div className="ml-4 flow-root lg:ml-8">
                         <a
-                          href="#"
+                          href="/Checkout"
                           className="group -m-2 p-2 flex items-center"
                         >
                           <ShoppingBagIcon
