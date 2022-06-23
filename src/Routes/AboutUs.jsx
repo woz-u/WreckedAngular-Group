@@ -17,12 +17,12 @@ export default function AboutUs() {
               What is Be Herd?
             </h2>
             <p className="mt-8 text-2xl text-indigo-500">
-            Be Herd is the latest way to celebrate a birthday, anniversary, or any other special occasion in the most hilarious way. We want to help you celebrate any special occasion for that special person by filling their yard with a herd of cow lawn ordinates and your message congratulating them on the occasion. After several days (time depending on the package) we will go back and pick up the herd. If someone has moved their herd to your lawn, we have The Mad Cow Special to get your revenge at an amazing price! Let your message Be Herd.
+            Be Herd is the latest way to celebrate a birthday, anniversary, or any other special occasion in the most hilarious way. Celebrate that special person by filling their yard with a herd of cow lawn ornaments. Set up and pickup included. Let your message Be Herd.
             </p>
             <div className="py-20">
               <h2 className="py-10 text-indigo-600 text-4xl font-bold">Our Team</h2>
               <p className="text-2xl text-indigo-500">
-                Our team is called Wrecked Angular, there is 3 members in our team Sam, Jeremy and Tim. We met at a coding bootcamp called Woz-U and from there our relationship continued to flourish. Helping eachother throughout the bootcamp and being assigned a final project together this website is the masterpiece we came up with. We hope you enjoy the idea and website.
+                Wrecked Angular is made up of 3 members, Sam, Jeremy, and Tim. We met at a coding bootcamp, Woz-U, and from there our relationship flourished.This website is the masterpiece we came up with. We hope you enjoy the idea and website.
               </p>
             </div>
           </div>

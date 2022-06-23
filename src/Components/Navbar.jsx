@@ -320,9 +320,9 @@ function Header() {
                 <div className="h-16 flex items-center justify-between">
                   {/* Logo (lg+) */}
                   <div className="hidden lg:flex-1 lg:flex lg:items-center">
-                    <a href="#">
+                    <a href="/Home">
                       <span className="sr-only">Workflow</span>
-                      <img className="h-8 w-auto" src={BeHerdLogo} alt="/" />
+                      <img className="h-14 w-14" src={BeHerdLogo} alt="/" />
                     </a>
                   </div>
 
