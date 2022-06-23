@@ -1,32 +1,52 @@
-import react from "react";
+import React, {useState} from "react";
 import { Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import { ChevronUpIcon } from "@heroicons/react/solid";
+import data from "./data";
+import Showandhide from "../Components/Showandhide";
+
 const products = [
   {
     id: 1,
-    name: "Micro Backpack",
-    href: "#",
-    price: "$70.00",
-    color: "Moss",
-    size: "5L",
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/checkout-page-04-product-01.jpg",
-    imageAlt:
-      "Moss green canvas compact backpack with double top zipper, zipper front pouch, and matching carry handle and backpack straps.",
-  },
+    name: "Calf Package",
+    image: "https://cdn.discordapp.com/attachments/938922482432376843/984923525494231051/1.png",
+    price: "$60.00"
+},
+{
+    id: 2,
+    name: "Cow Package",
+    image: "https://cdn.discordapp.com/attachments/938922482432376843/984923525729108008/2.png",
+    price: "$80.00"
+},
+{
+    id: 3,
+    name: "Bull Package",
+    image: "https://cdn.discordapp.com/attachments/938922482432376843/984923526001754232/3.png",
+    price: "$100.00"
+},
+{
+    id: 4,
+    name: "Mad Cow Package",
+    image: "https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fcdn.discordapp.com%2Fattachments%2F938922482432376843%2F985937296954130432%2FRevenge.png",
+    price: "$50.00"
+}
 ]; // More products...
 
 const Checkout = () => {
+  function Showdelivery(props){
+    const difaddress = () =>{
+      
+    }
+  }
   return (
-    <div className="bg-gray-50">
+    <div className="bg-gray-900">
       {/* Background color split screen for large screens */}
       <div
-        className="hidden lg:block fixed top-0 left-0 w-1/2 h-full bg-gray-900"
+        className="hidden lg:block fixed top-0 left-0 w-1/2 bg-gray-900"
         aria-hidden="true"
       />
       <div
-        className="hidden lg:block fixed top-0 right-0 w-1/2 h-full bg-gray-700"
+        className="hidden lg:block fixed top-0 right-0 w-1/2 bg-gray-700"
         aria-hidden="true"
       />
 
@@ -35,7 +55,7 @@ const Checkout = () => {
 
         <section
           aria-labelledby="summary-heading"
-          className="bg-white pt-16 pb-10 px-4 sm:px-6 lg:px-0 lg:pb-16 lg:bg-transparent lg:row-start-1 lg:col-start-2"
+          className="pt-16 pb-10 px-4 sm:px-6 lg:px-0 lg:pb-16 lg:bg-transparent lg:row-start-1 lg:col-start-2 bg-gray-700"
         >
           <div className="max-w-lg mx-auto lg:max-w-none">
             <h2 id="summary-heading" className="text-lg font-medium text-white">
@@ -44,7 +64,7 @@ const Checkout = () => {
 
             <ul
               role="list"
-              className="text-sm font-medium text-white divide-y divide-gray-50"
+              className="text-sm font-medium text-white divide-y divide-gray-50 "
             >
               {products.map((product) => (
                 <li
@@ -90,8 +110,8 @@ const Checkout = () => {
               </div>
             </dl>
 
-            <Popover className="fixed bottom-0 inset-x-0 flex flex-col-reverse text-sm font-medium text-white lg:hidden">
-              <div className="relative z-10 bg-gray-50 border-t border-white px-4 sm:px-6">
+            <Popover className="inset-x-0 flex flex-col-reverse text-sm font-medium text-white lg:hidden">
+              <div className="relative z-10 bg-gray-700 border-t border-white px-4 sm:px-6">
                 <div className="max-w-lg mx-auto">
                   <Popover.Button className="w-full flex items-center py-6 font-medium">
                     <span className="text-white mr-auto">Total</span>
@@ -388,7 +408,7 @@ const Checkout = () => {
               >
                 Delivery information
               </h2>
-
+              
               <div className="mt-6 flex items-center">
                 <input
                   id="same-as-shipping"
@@ -396,6 +416,7 @@ const Checkout = () => {
                   type="checkbox"
                   defaultChecked
                   className="h-4 w-4 border-white rounded text-indigo-600 focus:ring-indigo-500"
+                  onChange={Showdelivery}
                 />
                 <div className="ml-2">
                   <label
@@ -407,6 +428,7 @@ const Checkout = () => {
                 </div>
               </div>
             </section>
+            
 
             <div className="mt-10 pt-6 border-t border-white sm:flex sm:items-center sm:justify-between">
               <button

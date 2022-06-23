@@ -8,15 +8,19 @@ import {
   ShoppingBagIcon,
   XIcon,
 } from "@heroicons/react/outline";
-import Basicpackage from "../Routes/BasicPackage";
+import CalfPack from "../Routes/CalfPack";
+import CowPack from "../Routes/CowPack";
+import BullPack from "../Routes/BullPack";
+import MadCow from "../Routes/MadCow";
 import BeHerd from "../Assets/BeHerdBackground.png";
 import BeHerdLogo from "../Assets/BeHerdLogo.png";
-import Basic from "../Assets/Basic.png";
 import Advance from "../Assets/Advance.png";
 import Premium from "../Assets/Premium.png";
 import Revenge from "../Assets/Revenge.png";
 import Checkout from "../Routes/Checkout";
 import { Link } from "react-router-dom";
+import SignIn from "../Routes/SignIn";
+import SignUp from "../Routes/SignUp";
 
 const currencies = ["USD", "CAD"];
 const navigation = {
@@ -25,38 +29,38 @@ const navigation = {
       name: "Packages",
       featured: [
         {
-          name: "Basic",
-          href: "/BasicPackage",
+          name: "Calf Pack",
+          href: "/CalfPack",
           imageSrc:
             "https://cdn.discordapp.com/attachments/938922482432376843/984923525494231051/1.png",
-          imageAlt: "Basic Package",
+          imageAlt: "Calf Package",
         },
         {
-          name: "Advance",
-          href: "#",
+          name: "Cow Pack",
+          href: "/CowPack",
           imageSrc:
             "https://cdn.discordapp.com/attachments/938922482432376843/984923525729108008/2.png",
-          imageAlt: "Advance Package",
+          imageAlt: "Cow Pack",
         },
         {
-          name: "Premium",
-          href: "#",
+          name: "Bull Pack",
+          href: "/BullPack",
           imageSrc:
             "https://cdn.discordapp.com/attachments/938922482432376843/984923526001754232/3.png",
-          imageAlt: "Premium Package",
+          imageAlt: "Bull Pack",
         },
         {
-          name: "Revenge",
-          href: "#",
+          name: "The Mad Cow Special",
+          href: "/MadCow",
           imageSrc:
             "https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fcdn.discordapp.com%2Fattachments%2F938922482432376843%2F985937296954130432%2FRevenge.png",
-          imageAlt: "Revenge Package",
+          imageAlt: "MadCow",
         },
       ],
     },
   ],
   pages: [
-    { name: "About Us", href: "#" },
+    { name: "About Us", href: "/AboutUs" },
     { name: "Reviews", href: "#" },
   ],
 };
@@ -188,7 +192,7 @@ function Header() {
                 <div className="border-t border-gray-200 py-6 px-4 space-y-6">
                   <div className="flow-root">
                     <a
-                      href="#"
+                      href="/SignUp"
                       className="-m-2 p-2 block font-medium text-gray-900"
                     >
                       Create an account
@@ -196,7 +200,7 @@ function Header() {
                   </div>
                   <div className="flow-root">
                     <a
-                      href="#"
+                      href="/SignIn"
                       className="-m-2 p-2 block font-medium text-gray-900"
                     >
                       Sign in
@@ -293,13 +297,13 @@ function Header() {
 
               <div className="flex items-center space-x-6">
                 <a
-                  href="#"
+                  href="/SignIn"
                   className="text-sm font-medium text-white hover:text-gray-100"
                 >
                   Sign in
                 </a>
                 <a
-                  href="#"
+                  href="/SignUp"
                   className="text-sm font-medium text-white hover:text-gray-100"
                 >
                   Create an account
@@ -315,9 +319,9 @@ function Header() {
                 <div className="h-16 flex items-center justify-between">
                   {/* Logo (lg+) */}
                   <div className="hidden lg:flex-1 lg:flex lg:items-center">
-                    <a href="#">
+                    <a href="/Home">
                       <span className="sr-only">Workflow</span>
-                      <img className="h-8 w-auto" src={BeHerdLogo} alt="/" />
+                      <img className="h-14 w-14" src={BeHerdLogo} alt="/" />
                     </a>
                   </div>
 
@@ -388,7 +392,7 @@ function Header() {
                                                 aria-hidden="true"
                                                 className="mt-1"
                                               >
-                                                Shop now
+                                                Get Details
                                               </p>
                                             </div>
                                           ))}
@@ -466,7 +470,7 @@ function Header() {
                       {/* Cart */}
                       <div className="ml-4 flow-root lg:ml-8">
                         <a
-                          href="#"
+                          href="/Checkout"
                           className="group -m-2 p-2 flex items-center"
                         >
                           <ShoppingBagIcon
