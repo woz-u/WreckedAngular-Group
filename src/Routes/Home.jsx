@@ -14,7 +14,6 @@ import BullPack from "./BullPack";
 import MadCow from "./MadCow";
 import BeHerd from "../Assets/BeHerdBackground.png";
 import BeHerdLogo from "../Assets/BeHerdLogo.png";
-import Basic from "../Assets/Basic.png";
 import Advance from "../Assets/Advance.png";
 import Premium from "../Assets/Premium.png";
 import Revenge from "../Assets/Revenge.png";

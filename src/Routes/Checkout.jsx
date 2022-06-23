@@ -1,9 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
 import { Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import { ChevronUpIcon } from "@heroicons/react/solid";
 import data from "./data";
-import { useState } from "react";
+import Showandhide from "../Components/Showandhide";
 
 const products = [
   {
@@ -33,7 +33,11 @@ const products = [
 ]; // More products...
 
 const Checkout = () => {
-
+  function Showdelivery(props){
+    const difaddress = () =>{
+      
+    }
+  }
   return (
     <div className="bg-gray-900">
       {/* Background color split screen for large screens */}
@@ -412,6 +416,7 @@ const Checkout = () => {
                   type="checkbox"
                   defaultChecked
                   className="h-4 w-4 border-white rounded text-indigo-600 focus:ring-indigo-500"
+                  onChange={Showdelivery}
                 />
                 <div className="ml-2">
                   <label
