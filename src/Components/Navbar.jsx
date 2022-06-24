@@ -8,19 +8,12 @@ import {
   ShoppingBagIcon,
   XIcon,
 } from "@heroicons/react/outline";
-import CalfPack from "../Routes/CalfPack";
-import CowPack from "../Routes/CowPack";
-import BullPack from "../Routes/BullPack";
-import MadCow from "../Routes/MadCow";
-import BeHerd from "../Assets/BeHerdBackground.png";
+
 import BeHerdLogo from "../Assets/BeHerdLogo.png";
-import Advance from "../Assets/Advance.png";
-import Premium from "../Assets/Premium.png";
-import Revenge from "../Assets/Revenge.png";
-import Checkout from "../Routes/Checkout";
-import { Link } from "react-router-dom";
-import SignIn from "../Routes/SignIn";
-import SignUp from "../Routes/SignUp";
+import {auth, provider} from '../firebase';
+import {signInWithPopup, signOut} from 'firebase/auth';
+import { useAuthState} from 'react-firebase-hooks/auth'
+
 
 const currencies = ["USD", "CAD"];
 const navigation = {
@@ -70,7 +63,33 @@ function classNames(...classes) {
 }
 
 function Header() {
+  const [user, loading, error] = useAuthState(auth);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+
+
+  const googleProvider = (e) => {
+    signInWithPopup(auth, provider)
+    .then((result) =>{
+      console.log(result);
+    
+    }).catch((error) =>{
+      console.log(error.message);
+    });
+  };
+
+
+  const logOut = () =>{
+    signOut(auth).then(() => {
+      console.log("You logged out");
+    
+    }).catch((error) =>{
+      console(error.message);
+    })
+  }
+
+
+
 
   return (
     <div>
@@ -199,12 +218,25 @@ function Header() {
                     </a>
                   </div>
                   <div className="flow-root">
-                    <a
-                      href="/SignIn"
-                      className="-m-2 p-2 block font-medium text-gray-900"
-                    >
-                      Sign in
-                    </a>
+
+  {!user?(
+ <a
+ onClick={googleProvider}
+ className="-m-2 p-2 block font-medium text-gray-900"
+>
+ Sign in
+</a>
+      ) : (
+        <a
+        onClick={logOut}
+        className="-m-2 p-2 block font-medium text-gray-900"
+      >
+        Log Out
+      </a>
+      ) }
+                   
+
+
                   </div>
                 </div>
 
