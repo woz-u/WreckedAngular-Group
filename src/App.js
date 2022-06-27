@@ -1,23 +1,5 @@
 // importing components from react-router-dom package
 import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-} from "react-router-dom";
-
-import Home from "./Routes/Home";
-import AboutUs from "./Routes/AboutUs";
-import Checkout from "./Routes/Checkout";
-import CalfPack from "./Routes/CalfPack";
-import CowPack from "./Routes/CowPack";
-import BullPack from "./Routes/BullPack";
-import MadCow from "./Routes/MadCow";
-import Navbar from "./Components/Navbar";
-import Footer from "./Components/Footer";
-import SignIn from "./Routes/SignIn";
-import SignUp from "./Routes/SignUp";
-
-function App() {
   return (
     <>
       <Navbar />
