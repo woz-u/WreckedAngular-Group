@@ -16,6 +16,7 @@ import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 import SignIn from "./Routes/SignIn";
 import SignUp from "./Routes/SignUp";
+import Reviews from "./Routes/Reviews";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         <Route path="/SignUp" element={<SignUp />} />
         <Route path="/AboutUs" element={<AboutUs />} />
         <Route path="/Home" element={<Home />} />
+        <Route path="/Reviews" element={<Reviews/>} />
       </Routes>
       <Footer />
     </>
