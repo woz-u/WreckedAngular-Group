@@ -1,5 +1,5 @@
-import React from "react";
-import { Fragment, useState } from "react";
+import React, { useState, Fragment } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { Dialog, Popover, Tab, Transition } from "@headlessui/react";
 import {
   MenuIcon,
@@ -8,12 +8,10 @@ import {
   ShoppingBagIcon,
   XIcon,
 } from "@heroicons/react/outline";
-
 import BeHerdLogo from "../Assets/BeHerdLogo.png";
-import {auth, provider} from '../firebase';
-import {signInWithPopup, signOut} from 'firebase/auth';
-import { useAuthState} from 'react-firebase-hooks/auth'
-
+import { auth, provider } from "../firebase";
+import { signInWithPopup, signOut } from "firebase/auth";
+import { UserAuth } from "../context/AuthContext";
 
 const currencies = ["USD", "CAD"];
 const navigation = {
@@ -54,7 +52,7 @@ const navigation = {
   ],
   pages: [
     { name: "About Us", href: "/AboutUs" },
-    { name: "Reviews", href: "#" },
+    { name: "Reviews", href: "/Reviews" },
   ],
 };
 
@@ -62,34 +60,29 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-function Header() {
-  const [user, loading, error] = useAuthState(auth);
+const Navbar = () => {
+  const navigate = useNavigate();
+  const { user, logout } = UserAuth();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-
 
   const googleProvider = (e) => {
     signInWithPopup(auth, provider)
-    .then((result) =>{
-      console.log(result);
-    
-    }).catch((error) =>{
-      console.log(error.message);
-    });
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
   };
 
-
-  const logOut = () =>{
-    signOut(auth).then(() => {
-      console.log("You logged out");
-    
-    }).catch((error) =>{
-      console(error.message);
-    })
-  }
-
-
-
+  const handleSignOut = async () => {
+    try {
+      await logout();
+      navigate("/");
+    } catch (e) {
+      console.log(e.message);
+    }
+  };
 
   return (
     <div>
@@ -217,26 +210,30 @@ function Header() {
                       Create an account
                     </a>
                   </div>
-                  <div className="flow-root">
-
-  {!user?(
- <a
- onClick={googleProvider}
- className="-m-2 p-2 block font-medium text-gray-900"
->
- Sign in
-</a>
-      ) : (
-        <a
-        onClick={logOut}
-        className="-m-2 p-2 block font-medium text-gray-900"
-      >
-        Log Out
-      </a>
-      ) }
-                   
-
-
+                  <div className="flow-root t">
+                    {user?.email ? (
+                      <div>
+                        <Link to="/" className="p-4 text-white">
+                          Account
+                        </Link>
+                        <button onClick={handleSignOut}>Sign out</button>
+                      </div>
+                    ) : (
+                      <div className="hidden md:block">
+                        <Link
+                          to="/signin"
+                          className="p-4 hover:text-accent text-white"
+                        >
+                          Sign In
+                        </Link>
+                        <Link
+                          to="/signup"
+                          className="bg-button text-btnText px-5 py-2 ml-2 rounded-2xl shadow-lg hover:shadow-2xl text-white"
+                        >
+                          Sign Up
+                        </Link>
+                      </div>
+                    )}
                   </div>
                 </div>
 
@@ -328,18 +325,26 @@ function Header() {
               </form>
 
               <div className="flex items-center space-x-6">
-                <a
-                  href="/SignIn"
-                  className="text-sm font-medium text-white hover:text-gray-100"
-                >
-                  Sign in
-                </a>
-                <a
-                  href="/SignUp"
-                  className="text-sm font-medium text-white hover:text-gray-100"
-                >
-                  Create an account
-                </a>
+                {user?.email ? (
+                  <div>
+                    <Link to="/account" className="text-sm font-medium text-white hover:text-gray-100 p-5">
+                      Account
+                    </Link>
+                    <button className='text-sm font-medium text-white hover:text-gray-100' onClick={handleSignOut}>Sign out</button>
+                  </div>
+                ) : (
+                  <div className="hidden md:block">
+                    <Link to="/signin" className="text-sm font-medium text-white hover:text-gray-100 p-5">
+                      Sign In
+                    </Link>
+                    <Link
+                      to="/signup"
+                      className="text-sm font-medium text-white hover:text-gray-100"
+                    >
+                      Sign Up
+                    </Link>
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -463,21 +468,21 @@ function Header() {
                     </button>
 
                     {/* Search */}
-                    <a href="#" className="ml-2 p-2 text-white">
+                    <a href="/" className="ml-2 p-2 text-white">
                       <span className="sr-only">Search</span>
                       <SearchIcon className="w-6 h-6" aria-hidden="true" />
                     </a>
                   </div>
 
                   {/* Logo (lg-) */}
-                  <a href="#" className="lg:hidden">
+                  <a href="/" className="lg:hidden">
                     <span className="sr-only">Workflow</span>
                     <img src="BeHerdLogo.png" alt="" className="h-8 w-auto" />
                   </a>
 
                   <div className="flex-1 flex items-center justify-end">
                     <a
-                      href="#"
+                      href="/"
                       className="hidden text-sm font-medium text-white lg:block"
                     >
                       Search
@@ -485,7 +490,7 @@ function Header() {
 
                     <div className="flex items-center lg:ml-8">
                       {/* Help */}
-                      <a href="#" className="p-2 text-white lg:hidden">
+                      <a href="/" className="p-2 text-white lg:hidden">
                         <span className="sr-only">Help</span>
                         <QuestionMarkCircleIcon
                           className="w-6 h-6"
@@ -493,7 +498,7 @@ function Header() {
                         />
                       </a>
                       <a
-                        href="#"
+                        href="/"
                         className="hidden text-sm font-medium text-white lg:block"
                       >
                         Help
@@ -527,5 +532,5 @@ function Header() {
       </header>
     </div>
   );
-}
-export default Header;
+};
+export default Navbar;
