@@ -8,11 +8,7 @@ import {
   ShoppingBagIcon,
   XIcon,
 } from "@heroicons/react/outline";
-import CalfPack from "../Routes/CalfPack";
-import CowPack from "../Routes/CowPack";
-import BullPack from "../Routes/BullPack";
-import MadCow from "../Routes/MadCow";
-import BeHerd from "../Assets/BeHerdBackground.png";
+
 import BeHerdLogo from "../Assets/BeHerdLogo.png";
 import Advance from "../Assets/Advance.png";
 import Premium from "../Assets/Premium.png";
@@ -22,6 +18,10 @@ import { Link } from "react-router-dom";
 import SignIn from "../Routes/SignIn";
 import SignUp from "../Routes/SignUp";
 import { useCart } from 'react-use-cart';
+import {auth, provider} from '../firebase';
+import {signInWithPopup, signOut} from 'firebase/auth';
+import { useAuthState} from 'react-firebase-hooks/auth'
+
 
 const currencies = ["USD", "CAD"];
 const navigation = {
@@ -61,7 +61,7 @@ const navigation = {
     },
   ],
   pages: [
-    { name: "About Us", href: "#" },
+    { name: "About Us", href: "/AboutUs" },
     { name: "Reviews", href: "#" },
   ],
 };
@@ -71,6 +71,8 @@ function classNames(...classes) {
 }
 
 function Header(props) {
+function Header() {
+  const [user, loading, error] = useAuthState(auth);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const {countCartItems} = props;
   const { addItem } = useCart();
@@ -82,6 +84,31 @@ function Header(props) {
         updateItemQuantity,
         removeItem,
     } = useCart();
+
+
+  const googleProvider = (e) => {
+    signInWithPopup(auth, provider)
+    .then((result) =>{
+      console.log(result);
+    
+    }).catch((error) =>{
+      console.log(error.message);
+    });
+  };
+
+
+  const logOut = () =>{
+    signOut(auth).then(() => {
+      console.log("You logged out");
+    
+    }).catch((error) =>{
+      console(error.message);
+    })
+  }
+
+
+
+
   return (
     <div>
       {/* Mobile menu */}
@@ -209,12 +236,25 @@ function Header(props) {
                     </a>
                   </div>
                   <div className="flow-root">
-                    <a
-                      href="/SignIn"
-                      className="-m-2 p-2 block font-medium text-gray-900"
-                    >
-                      Sign in
-                    </a>
+
+  {!user?(
+ <a
+ onClick={googleProvider}
+ className="-m-2 p-2 block font-medium text-gray-900"
+>
+ Sign in
+</a>
+      ) : (
+        <a
+        onClick={logOut}
+        className="-m-2 p-2 block font-medium text-gray-900"
+      >
+        Log Out
+      </a>
+      ) }
+                   
+
+
                   </div>
                 </div>
 
@@ -329,9 +369,9 @@ function Header(props) {
                 <div className="h-16 flex items-center justify-between">
                   {/* Logo (lg+) */}
                   <div className="hidden lg:flex-1 lg:flex lg:items-center">
-                    <a href="#">
+                    <a href="/Home">
                       <span className="sr-only">Workflow</span>
-                      <img className="h-8 w-auto" src={BeHerdLogo} alt="/" />
+                      <img className="h-14 w-14" src={BeHerdLogo} alt="/" />
                     </a>
                   </div>
 
@@ -506,4 +546,5 @@ function Header(props) {
     </div>
   );
 }
+
 export default Header;

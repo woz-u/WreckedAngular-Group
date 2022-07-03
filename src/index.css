@@ -15,3 +15,7 @@ button.badge{
     color: #ffffff;
     width: 1.5rem;
 }
+
+.navigation{
+    hover: opacity-75;
+}

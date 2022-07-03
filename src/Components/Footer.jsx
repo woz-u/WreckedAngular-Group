@@ -1,31 +1,21 @@
 import React from "react";
 
 const footerNavigation = {
-  shop: [
-    { name: "Bags", href: "#" },
-    { name: "Tees", href: "#" },
-    { name: "Objects", href: "#" },
-    { name: "Home Goods", href: "#" },
-    { name: "Accessories", href: "#" },
-  ],
   company: [
-    { name: "Who we are", href: "#" },
-    { name: "Sustainability", href: "#" },
-    { name: "Press", href: "#" },
-    { name: "Careers", href: "#" },
+    { name: "Who we are", href: "/AboutUs" },
     { name: "Terms & Conditions", href: "#" },
     { name: "Privacy", href: "#" },
   ],
   account: [
-    { name: "Manage Account", href: "#" },
-    { name: "Returns & Exchanges", href: "#" },
-    { name: "Redeem a Gift Card", href: "#" },
+    { name: "Manage Account", href: "/SignIn" },
+    { name: "Create Account", href: "/Signup" },
+    { name: "Support", href: "#" },
+
   ],
-  connect: [
-    { name: "Contact Us", href: "#" },
-    { name: "Twitter", href: "#" },
-    { name: "Instagram", href: "#" },
-    { name: "Pinterest", href: "#" },
+  Socials: [
+    { name: "Twitter", href: "https://twitter.com/ManagerHerd" },
+    { name: "Instagram", href: "https://www.instagram.com/be_herd_manager/" },
+    { name: "Facebook", href: "https://www.facebook.com/profile.php?id=100082685704890" },
   ],
 };
 
@@ -39,30 +29,15 @@ function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="py-20 xl:grid xl:grid-cols-3 xl:gap-8">
             <div className="grid grid-cols-2 gap-8 xl:col-span-2">
-              <div className="space-y-12 md:space-y-0 md:grid md:grid-cols-2 md:gap-8">
+              <div className="flex space-between space-y-12 md:space-y-0 md:grid md:grid-cols-2 md:gap-8">
                 <div>
-                  <h3 className="text-sm font-medium text-white">Shop</h3>
-                  <ul role="list" className="mt-6 space-y-6">
-                    {footerNavigation.shop.map((item) => (
-                      <li key={item.name} className="text-sm">
-                        <a
-                          href={item.href}
-                          className="text-gray-300 hover:text-white"
-                        >
-                          {item.name}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="text-sm font-medium text-white">About Us</h3>
+                  <h3 className="text-large font-medium  text-indigo-500">About Us</h3>
                   <ul role="list" className="mt-6 space-y-6">
                     {footerNavigation.company.map((item) => (
                       <li key={item.name} className="text-sm">
                         <a
                           href={item.href}
-                          className="text-gray-300 hover:text-white"
+                          className="text-indigo-300 hover:text-white"
                         >
                           {item.name}
                         </a>
@@ -73,13 +48,13 @@ function Footer() {
               </div>
               <div className="space-y-12 md:space-y-0 md:grid md:grid-cols-2 md:gap-8">
                 <div>
-                  <h3 className="text-sm font-medium text-white">Account</h3>
+                  <h3 className="text-large font-medium  text-indigo-500">Account</h3>
                   <ul role="list" className="mt-6 space-y-6">
                     {footerNavigation.account.map((item) => (
                       <li key={item.name} className="text-sm">
                         <a
                           href={item.href}
-                          className="text-gray-300 hover:text-white"
+                          className="text-indigo-300 hover:text-white"
                         >
                           {item.name}
                         </a>
@@ -88,13 +63,13 @@ function Footer() {
                   </ul>
                 </div>
                 <div>
-                  <h3 className="text-sm font-medium text-white">Connect</h3>
+                  <h3 className="text-large font-medium text-indigo-500">Socials</h3>
                   <ul role="list" className="mt-6 space-y-6">
-                    {footerNavigation.connect.map((item) => (
+                    {footerNavigation.Socials.map((item) => (
                       <li key={item.name} className="text-sm">
                         <a
                           href={item.href}
-                          className="text-gray-300 hover:text-white"
+                          className="text-indigo-300 hover:text-white"
                         >
                           {item.name}
                         </a>
@@ -105,14 +80,14 @@ function Footer() {
               </div>
             </div>
             <div className="mt-12 md:mt-16 xl:mt-0">
-              <h3 className="text-sm font-medium text-white">
+              <h3 className="text-sm font-medium text-indigo-500">
                 Sign up for our newsletter
               </h3>
-              <p className="mt-6 text-sm text-gray-300">
-                The latest deals and savings, sent to your inbox weekly.
+              <p className="mt-6 text-sm text-indigo-300">
+                Get the latest deals and savings, sent to your inbox monthly.
               </p>
               <form className="mt-2 flex sm:max-w-md">
-                <label htmlFor="email-address" className="sr-only">
+                <label htmlFor="email-address" className="sr-only text-white">
                   Email address
                 </label>
                 <input
@@ -120,7 +95,7 @@ function Footer() {
                   type="text"
                   autoComplete="email"
                   required
-                  className="appearance-none min-w-0 w-full bg-white border border-white rounded-md shadow-sm py-2 px-4 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:border-white focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-white"
+                  className="appearance-none min-w-0 w-full bg-slate-600 border border-indigo-600 rounded-md shadow-sm py-2 px-4 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:border-white focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-indigo-600"
                 />
                 <div className="ml-4 flex-shrink-0">
                   <button

@@ -29,7 +29,7 @@ function classNames(...classes) {
 
 export default function Home() {
   return (
-    <div className="bg-white">
+    <div>
       {/* Hero section */}
       <div className="relative bg-gray-900">
         {/* Decorative image and overlay */}
@@ -54,17 +54,17 @@ export default function Home() {
             special occasion in the most hilarious way.
           </h2>
           <a
-            href="#"
+            href="/CalfPack"
             className="mt-8 inline-block bg-transparent  border-transparent rounded-md py-3 px-8 text-base font-medium text-white hover:bg-white hover:text-black"
           >
-            Find out more!
+            See where our packages begin!
           </a>
         </div>
       </div>
       {/* Featured section - Yard1 - */}
       <section
         aria-labelledby="social-impact-heading"
-        className="max-w-7xl mx-auto pt-24 px-4 sm:pt-32 sm:px-6 lg:px-8"
+        className="max-w-7xl mx-auto pt-24 px-4 sm:pt-32 sm:px-6 lg:px-8 bg-white"
       >
         <div className="relative rounded-lg overflow-hidden">
           <div className="absolute inset-0">
@@ -74,7 +74,7 @@ export default function Home() {
               className="w-full h-full object-center object-cover"
             />
           </div>
-          <div className="relative bg-gray-900 bg-opacity-60 py-32 px-6 sm:py-40 sm:px-12 lg:px-16">
+          <div className="relative bg-gray-900 bg-opacity-80 py-32 px-6 sm:py-40 sm:px-12 lg:px-16">
             <div className="relative max-w-3xl mx-auto flex flex-col items-center text-center">
               <h2
                 id="social-impact-heading"
@@ -89,8 +89,8 @@ export default function Home() {
                 Herd'ed, check out our Revenge Special! To find out more about what Be Herd is click the button below.
               </p>
               <a
-                href="#"
-                className="mt-8 w-full block bg-white border border-transparent rounded-md py-3 px-8 text-base font-medium text-gray-900 hover:bg-gray-100 sm:w-auto"
+                href="/AboutUs"
+                className="mt-8 inline-block bg-transparent  border-transparent rounded-md py-3 px-8 text-base font-medium text-white hover:bg-white hover:text-black"
               >
                 About Be Herd
               </a>
@@ -111,7 +111,7 @@ export default function Home() {
               className="w-full h-full object-center object-cover"
             />
           </div>
-          <div className="relative bg-gray-900 bg-opacity-40 py-32 px-6 sm:py-40 sm:px-12 lg:px-16">
+          <div className="relative bg-gray-900 bg-opacity-70 py-32 px-6 sm:py-40 sm:px-12 lg:px-16">
             <div className="relative max-w-3xl mx-auto flex flex-col items-center text-center">
               <h2
                 id="social-impact-heading"
@@ -125,14 +125,14 @@ export default function Home() {
                 socials!
               </p>
               <div className='flex flex-row max-w-[1240px] px-2 py-4 mx-auto justify-between sm:flex-row text-center text-white'>
-                <div className="px-10 text-4xl">
-                  <FaFacebook />
+                <div className="px-10 text-4xl ">
+                <a href="https://www.facebook.com/profile.php?id=100082685704890" className=" inline-block bg-transparent  border-transparent rounded-md px-5 text-white hover:bg-white hover:text-black"><FaFacebook /></a>
                 </div>
                 <div className="px-10 text-4xl">
-                  <FaInstagram />
+                <a href="https://www.instagram.com/be_herd_manager/" className=" inline-block bg-transparent  border-transparent rounded-md px-5 text-white hover:bg-white hover:text-black"><FaInstagram /></a>
                 </div>
                 <div className="px-10 text-4xl">
-                  <FaTwitter />
+                <a href="https://twitter.com/ManagerHerd" className=" inline-block bg-transparent  border-transparent rounded-md px-5 text-white hover:bg-white hover:text-black"><FaTwitter /></a>
                 </div>
               </div>
             </div>
