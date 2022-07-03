@@ -4,7 +4,7 @@ import {
   Route,
   Routes,
 } from "react-router-dom";
-
+import { CartProvider } from 'react-use-cart';
 import Home from "./Routes/Home";
 import About from "./Routes/About";
 import Checkout from "./Routes/Checkout";
@@ -15,11 +15,12 @@ import MadCow from "./Routes/MadCow";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 import SignIn from "./Routes/SignIn";
-import SignUp from "./Routes/SignUp"
+import SignUp from "./Routes/SignUp";
+
 
 function App() {
   return (
-    <>
+    <CartProvider>
       <Navbar />
       <Routes>
         <Route path="/" to="/Home" element={<Home />} />
@@ -33,7 +34,7 @@ function App() {
         <Route path="/SignUp" element={<SignUp />} />
       </Routes>
       <Footer />
-    </>
+    </CartProvider>
   );
 }
 

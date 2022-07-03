@@ -21,6 +21,7 @@ import Checkout from "../Routes/Checkout";
 import { Link } from "react-router-dom";
 import SignIn from "../Routes/SignIn";
 import SignUp from "../Routes/SignUp";
+import { useCart } from 'react-use-cart';
 
 const currencies = ["USD", "CAD"];
 const navigation = {
@@ -69,9 +70,18 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-function Header() {
+function Header(props) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const {countCartItems} = props;
+  const { addItem } = useCart();
 
+    const {
+        isEmpty,
+        totalUniqueItems,
+        items,
+        updateItemQuantity,
+        removeItem,
+    } = useCart();
   return (
     <div>
       {/* Mobile menu */}
@@ -478,7 +488,7 @@ function Header() {
                             aria-hidden="true"
                           />
                           <span className="ml-2 text-sm font-medium text-white">
-                            0
+                          <button className="badge">({totalUniqueItems})</button>
                           </span>
                           <span className="sr-only">
                             items in cart, view bag

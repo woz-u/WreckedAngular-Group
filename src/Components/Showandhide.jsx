@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Showandhide() {
+export default function Showandhide(props) {
   return (
     <div>   <section aria-labelledby="shipping-heading" className="mt-10">
     <h2
@@ -122,6 +122,4 @@ function Showandhide() {
 </div>
   )
 }
-
-export default Showandhide
          
