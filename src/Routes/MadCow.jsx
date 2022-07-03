@@ -38,7 +38,12 @@ const features = [
               <p className="mt-4 text-gray-500">
                 This Package is our Special Offer only to those who were Herd'ed by someone else, take your revenge now at a discounted price!
               </p>
-  
+              
+              <div>
+                <br></br>
+                <button className="bg-blue-600 text-white hover:opacity-75 p-2 rounded-3xl">Add to Cart</button>
+              </div>
+
               <dl className="mt-10 grid grid-cols-1 gap-y-10 gap-x-8 text-sm sm:grid-cols-2">
                 {features.map((feature) => (
                   <div key={feature.name}>
