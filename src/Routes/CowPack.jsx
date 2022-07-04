@@ -60,9 +60,20 @@ const features = [
                 ))}
               </dl>
             </div>
+
+            <dl className="mt-10 grid grid-cols-1 gap-y-10 gap-x-8 text-sm sm:grid-cols-2">
+              {features.map((feature) => (
+                <div key={feature.name}>
+                  <dt className="font-medium text-indigo-900">
+                    {feature.name}
+                  </dt>
+                  <dd className="mt-2 text-gray-500">{feature.description}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
-        </section>
-      </div>
-    )
-  }
-  
+        </div>
+      </section>
+    </div>
+  );
+}
