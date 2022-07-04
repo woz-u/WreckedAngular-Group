@@ -1,10 +1,5 @@
 // importing components from react-router-dom package
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-} from "react-router-dom";
 import { CartProvider } from 'react-use-cart';
 import Home from "./Routes/Home";
 import AboutUs from "./Routes/AboutUs";
