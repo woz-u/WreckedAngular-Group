@@ -48,11 +48,11 @@ const Signin = () => {
   };
 
   return (
-    <div>
-      <div className="max-w-[400px] mx-auto min-h-[600px] px-4 py-20">
-        <h1 className="text-2xl font-bold">Sign In</h1>
+    <div className="bg-slate-800">
+      <div className="max-w-[400px] mx-auto min-h-[600px] px-4 py-20 bg-slate-800">
+        <h1 className="text-2xl font-bold text-white">Sign In</h1>
         <form onSubmit={handleSubmit}>
-          <div className="my-4">
+          <div className="my-4 text-white">
             <label>Email</label>
             <div className="my-2 w-full relative rounded-2xl shadow-xl">
               <input
@@ -60,10 +60,10 @@ const Signin = () => {
                 className="w-full p-2 bg-primary border border-input rounded-2xl"
                 type="email"
               />
-              <AiOutlineMail className="absolute right-2 top-3 text-gray-400" />
+              <AiOutlineMail className="absolute right-2 top-3 text-gray-800" />
             </div>
           </div>
-          <div className="my-4">
+          <div className="my-4 text-white">
             <label>Password</label>
             <div className="my-2 w-full relative rounded-2xl shadow-xl">
               <input
@@ -71,14 +71,14 @@ const Signin = () => {
                 className="w-full p-2 bg-primary border border-input rounded-2xl"
                 type="password"
               />
-              <AiFillLock className="absolute right-2 top-3 text-gray-400" />
+              <AiFillLock className="absolute right-2 top-3 text-gray-800" />
             </div>
           </div>
-          <button className="w-full my-2 p-3 bg-button text-btnText rounded-2xl shadow-xl">
+          <button className="w-full my-2 p-3 bg-button text-btnText rounded-2xl shadow-xl bg-indigo-700 text-btnText rounded-2xl shadow-xl text-white hover:bg-white hover:text-black">
             Sign in
           </button>
         </form>
-        <p className="my-4">
+        <p className="my-4 text-white">
           Don't have an account?{" "}
           <Link to="/signup" className="text-accent">
             Sign up
@@ -88,7 +88,7 @@ const Signin = () => {
           {!user ? (
             <a
               onClick={googleProvider}
-              className="p-2 block font-medium text-gray-900 hover:cursor-pointer"
+              className="p-2 block font-medium text-white hover:cursor-pointer hover:text-indigo-700"
             >
               Sign in with Google
             </a>

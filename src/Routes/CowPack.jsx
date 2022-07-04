@@ -44,21 +44,11 @@ const features = [
                 This Package is great for someone with a regular sized yard that you want to congratulate or just give a good laugh to.
               </p>
               <br></br>
-              <div>
-                 {products.map((p) => (
-                  <div key={p.id}>
-                    <button className="bg-blue-600 text-white hover:opacity-75 p-2" onClick={() => addItem(p)}>Add to cart</button>
-                  </div>
-                 ))}
-              </div>
-              <dl className="mt-10 grid grid-cols-1 gap-y-10 gap-x-8 text-sm sm:grid-cols-2">
-                {features.map((feature) => (
-                  <div key={feature.name}>
-                    <dt className="font-medium text-indigo-900">{feature.name}</dt>
-                    <dd className="mt-2 text-gray-500">{feature.description}</dd>
-                  </div>
-                ))}
-              </dl>
+
+              <button className="bg-blue-600 text-white hover:opacity-75 p-2 rounded-3xl">
+                Add to Cart
+              </button>
+
             </div>
 
             <dl className="mt-10 grid grid-cols-1 gap-y-10 gap-x-8 text-sm sm:grid-cols-2">
