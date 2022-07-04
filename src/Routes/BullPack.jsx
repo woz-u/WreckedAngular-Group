@@ -72,7 +72,6 @@ const features = [
               ))}
             </dl>
           </div>
-        </div>
       </section>
     </div>
   );
