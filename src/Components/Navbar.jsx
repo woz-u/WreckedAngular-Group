@@ -12,6 +12,17 @@ import BeHerdLogo from "../Assets/BeHerdLogo.png";
 import { auth, provider } from "../firebase";
 import { signInWithPopup, signOut } from "firebase/auth";
 import { UserAuth } from "../context/AuthContext";
+import Advance from "../Assets/Advance.png";
+import Premium from "../Assets/Premium.png";
+import Revenge from "../Assets/Revenge.png";
+import Checkout from "../Routes/Checkout";
+import { Link } from "react-router-dom";
+import SignIn from "../Routes/SignIn";
+import SignUp from "../Routes/SignUp";
+import { useCart } from 'react-use-cart';
+import {auth, provider} from '../firebase';
+import {signInWithPopup, signOut} from 'firebase/auth';
+import { useAuthState} from 'react-firebase-hooks/auth'
 
 const currencies = ["USD", "CAD"];
 const navigation = {
@@ -64,6 +75,16 @@ const Navbar = () => {
   const navigate = useNavigate();
   const { user, logout } = UserAuth();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { addItem } = useCart();
+
+    const {
+        isEmpty,
+        totalUniqueItems,
+        items,
+        updateItemQuantity,
+        removeItem,
+    } = useCart();
+
 
   const googleProvider = (e) => {
     signInWithPopup(auth, provider)
@@ -515,7 +536,7 @@ const Navbar = () => {
                             aria-hidden="true"
                           />
                           <span className="ml-2 text-sm font-medium text-white">
-                            0
+                          <button className="badge">({totalUniqueItems})</button>
                           </span>
                           <span className="sr-only">
                             items in cart, view bag
