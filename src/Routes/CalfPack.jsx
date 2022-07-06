@@ -1,7 +1,9 @@
-
+import Checkout from "./Checkout";
+import { useCart } from 'react-use-cart';
+import data from "./data";
 const features = [
     {
-      name: '$60.00 + Tax',
+      name: '$60.00',
       description: 'The Calf Pack includes the following.',
     },
     {
@@ -17,7 +19,10 @@ const features = [
       description: 'The Herd will stay in the yard with the sign for 3 days and includes delivery and pickup.' },
   ]
   
-  export default function CalfPack() {
+  export default function CalfPack(props) {
+    const {product, onAdd} = props;
+    const { addItem } = useCart();
+    const {products} = data;
     return (
       <div className="bg-white">
         <section aria-labelledby="features-heading" className="relative">
@@ -38,8 +43,12 @@ const features = [
               <p className="mt-4 text-gray-500">
                 This Package is great for someone with a smaller yard that you want to congratulate or just give a good laugh to.
               </p>
-  
-              <dl className="mt-10 grid grid-cols-1 gap-y-10 gap-x-8 text-sm sm:grid-cols-2">
+              <br></br>
+
+              <button className="bg-blue-600 text-white hover:opacity-75 p-2 rounded-3xl">
+                Add to Cart
+              </button>
+                <dl className="mt-10 grid grid-cols-1 gap-y-10 gap-x-8 text-sm sm:grid-cols-2">
                 {features.map((feature) => (
                   <div key={feature.name}>
                     <dt className="font-medium text-indigo-900">{feature.name}</dt>

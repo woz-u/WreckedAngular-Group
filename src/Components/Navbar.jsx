@@ -1,5 +1,5 @@
-import React from "react";
-import { Fragment, useState } from "react";
+import React, { useState, Fragment } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { Dialog, Popover, Tab, Transition } from "@headlessui/react";
 import {
   MenuIcon,
@@ -8,12 +8,17 @@ import {
   ShoppingBagIcon,
   XIcon,
 } from "@heroicons/react/outline";
-
 import BeHerdLogo from "../Assets/BeHerdLogo.png";
-import {auth, provider} from '../firebase';
-import {signInWithPopup, signOut} from 'firebase/auth';
-import { useAuthState} from 'react-firebase-hooks/auth'
-
+import { auth, provider } from "../firebase";
+import { signInWithPopup, signOut } from "firebase/auth";
+import { UserAuth } from "../context/AuthContext";
+import Advance from "../Assets/Advance.png";
+import Premium from "../Assets/Premium.png";
+import Revenge from "../Assets/Revenge.png";
+import Checkout from "../Routes/Checkout";
+import SignIn from "../Routes/SignIn";
+import SignUp from "../Routes/SignUp";
+import { useCart } from 'react-use-cart';
 
 const currencies = ["USD", "CAD"];
 const navigation = {
@@ -53,8 +58,8 @@ const navigation = {
     },
   ],
   pages: [
-    { name: "About Us", href: "/AboutUs" },
-    { name: "Reviews", href: "#" },
+    { name: "About Us", href: "/AboutUs"},
+    { name: "Reviews", href: "/Reviews" },
   ],
 };
 
@@ -62,34 +67,39 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-function Header() {
-  const [user, loading, error] = useAuthState(auth);
+const Navbar = () => {
+  const navigate = useNavigate();
+  const { user, logout } = UserAuth();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { addItem } = useCart();
 
+    const {
+        isEmpty,
+        totalUniqueItems,
+        items,
+        updateItemQuantity,
+        removeItem,
+    } = useCart();
 
 
   const googleProvider = (e) => {
     signInWithPopup(auth, provider)
-    .then((result) =>{
-      console.log(result);
-    
-    }).catch((error) =>{
-      console.log(error.message);
-    });
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
   };
 
-
-  const logOut = () =>{
-    signOut(auth).then(() => {
-      console.log("You logged out");
-    
-    }).catch((error) =>{
-      console(error.message);
-    })
-  }
-
-
-
+  const handleSignOut = async () => {
+    try {
+      await logout();
+      navigate("/");
+    } catch (e) {
+      console.log(e.message);
+    }
+  };
 
   return (
     <div>
@@ -129,7 +139,7 @@ function Header() {
                     className="-m-2 p-2 rounded-md inline-flex items-center justify-center text-gray-400"
                     onClick={() => setMobileMenuOpen(false)}
                   >
-                    <span className="sr-only">Close menu</span>
+                    <span className="sr-only hover:text-slate-300">Close menu</span>
                     <XIcon className="h-6 w-6" aria-hidden="true" />
                   </button>
                 </div>
@@ -183,7 +193,7 @@ function Header() {
                               </a>
                               <p
                                 aria-hidden="true"
-                                className="mt-1 text-sm text-gray-500"
+                                className="mt-1 text-sm text-gray-500 hover:text-slate-300"
                               >
                                 Shop now
                               </p>
@@ -212,31 +222,35 @@ function Header() {
                   <div className="flow-root">
                     <a
                       href="/SignUp"
-                      className="-m-2 p-2 block font-medium text-gray-900"
+                      className="-m-2 p-2 block font-medium text-gray-900 hover:text-slate-300"
                     >
                       Create an account
                     </a>
                   </div>
-                  <div className="flow-root">
-
-  {!user?(
- <a
- onClick={googleProvider}
- className="-m-2 p-2 block font-medium text-gray-900"
->
- Sign in
-</a>
-      ) : (
-        <a
-        onClick={logOut}
-        className="-m-2 p-2 block font-medium text-gray-900"
-      >
-        Log Out
-      </a>
-      ) }
-                   
-
-
+                  <div className="flow-root t">
+                    {user?.email ? (
+                      <div>
+                        <Link to="/" className="p-4 text-white hover:text-slate-300">
+                          Account
+                        </Link>
+                        <button onClick={handleSignOut}>Sign out</button>
+                      </div>
+                    ) : (
+                      <div className="hidden md:block">
+                        <Link
+                          to="/signin"
+                          className="p-4 text-white hover:text-slate-300"
+                        >
+                          Sign In
+                        </Link>
+                        <Link
+                          to="/signup"
+                          className="bg-button text-btnText px-5 py-2 ml-2 rounded-2xl shadow-lg hover:text-slate-300 text-white"
+                        >
+                          Create Account
+                        </Link>
+                      </div>
+                    )}
                   </div>
                 </div>
 
@@ -328,18 +342,26 @@ function Header() {
               </form>
 
               <div className="flex items-center space-x-6">
-                <a
-                  href="/SignIn"
-                  className="text-sm font-medium text-white hover:text-gray-100"
-                >
-                  Sign in
-                </a>
-                <a
-                  href="/SignUp"
-                  className="text-sm font-medium text-white hover:text-gray-100"
-                >
-                  Create an account
-                </a>
+                {user?.email ? (
+                  <div>
+                    <Link to="/account" className="text-sm font-medium text-white hover:text-gray-100 p-5">
+                      Account
+                    </Link>
+                    <button className='text-sm font-medium text-white hover:text-gray-100' onClick={handleSignOut}>Sign out</button>
+                  </div>
+                ) : (
+                  <div className="hidden md:block">
+                    <Link to="/signin" className="text-sm font-medium text-white p-5 hover:text-slate-300">
+                      Sign In
+                    </Link>
+                    <Link
+                      to="/signup"
+                      className="text-sm font-medium text-white hover:text-slate-300"
+                    >
+                      Create Account
+                    </Link>
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -461,43 +483,18 @@ function Header() {
                       <span className="sr-only">Open menu</span>
                       <MenuIcon className="h-6 w-6" aria-hidden="true" />
                     </button>
-
-                    {/* Search */}
-                    <a href="#" className="ml-2 p-2 text-white">
-                      <span className="sr-only">Search</span>
-                      <SearchIcon className="w-6 h-6" aria-hidden="true" />
-                    </a>
                   </div>
 
                   {/* Logo (lg-) */}
-                  <a href="#" className="lg:hidden">
+                  <a href="/" className="lg:hidden">
                     <span className="sr-only">Workflow</span>
                     <img src="BeHerdLogo.png" alt="" className="h-8 w-auto" />
                   </a>
 
                   <div className="flex-1 flex items-center justify-end">
-                    <a
-                      href="#"
-                      className="hidden text-sm font-medium text-white lg:block"
-                    >
-                      Search
-                    </a>
 
                     <div className="flex items-center lg:ml-8">
-                      {/* Help */}
-                      <a href="#" className="p-2 text-white lg:hidden">
-                        <span className="sr-only">Help</span>
-                        <QuestionMarkCircleIcon
-                          className="w-6 h-6"
-                          aria-hidden="true"
-                        />
-                      </a>
-                      <a
-                        href="#"
-                        className="hidden text-sm font-medium text-white lg:block"
-                      >
-                        Help
-                      </a>
+
 
                       {/* Cart */}
                       <div className="ml-4 flow-root lg:ml-8">
@@ -510,9 +507,9 @@ function Header() {
                             aria-hidden="true"
                           />
                           <span className="ml-2 text-sm font-medium text-white">
-                            0
+                          <button className="badge">({totalUniqueItems})</button>
                           </span>
-                          <span className="sr-only">
+                          <span className="sr-only ">
                             items in cart, view bag
                           </span>
                         </a>
@@ -527,5 +524,5 @@ function Header() {
       </header>
     </div>
   );
-}
-export default Header;
+};
+export default Navbar;

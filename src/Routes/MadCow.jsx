@@ -1,7 +1,9 @@
-
+import Checkout from "./Checkout";
+import { useCart } from 'react-use-cart';
+import data from "./data";
 const features = [
     {
-      name: '$50.00 + Tax',
+      name: '$50.00',
       description: 'The Mad Cow Special includes the following.',
     },
     {
@@ -17,7 +19,10 @@ const features = [
       description: 'The Herd will stay in the yard with the sign for 7 days and includes delivery and pickup.' },
   ]
   
-  export default function MadCow() {
+  export default function MadCow(props) {
+    const {product, onAdd} = props;
+    const { addItem } = useCart();
+    const {products} = data;
     return (
       <div className="bg-white">
         <section aria-labelledby="features-heading" className="relative">
@@ -36,10 +41,14 @@ const features = [
               </h2>
               <p className="mt-4 text-4xl font-extrabold text-indigo-600 tracking-tight">Mad Cow Special</p>
               <p className="mt-4 text-gray-500">
-                This Package is our Special Offer only to those who were Herd'ed by someone else, take your revenge now at a discounted price!
+              This Package is our Special Offer only to those who were Herd'ed by someone else, take your revenge now at a discounted price!
               </p>
-  
-              <dl className="mt-10 grid grid-cols-1 gap-y-10 gap-x-8 text-sm sm:grid-cols-2">
+              <br></br>
+
+              <button className="bg-blue-600 text-white hover:opacity-75 p-2 rounded-3xl">
+                Add to Cart
+              </button>
+                <dl className="mt-10 grid grid-cols-1 gap-y-10 gap-x-8 text-sm sm:grid-cols-2">
                 {features.map((feature) => (
                   <div key={feature.name}>
                     <dt className="font-medium text-indigo-900">{feature.name}</dt>

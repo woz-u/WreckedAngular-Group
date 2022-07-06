@@ -1,7 +1,10 @@
+import Checkout from "./Checkout";
+import { useCart } from 'react-use-cart';
+import data from "./data";
 
 const features = [
     {
-      name: '$100.00 + Tax',
+      name: '$100.00',
       description: 'The Bull Pack includes the following.',
     },
     {
@@ -16,8 +19,10 @@ const features = [
     { name: 'Time Period',
       description: 'The Herd will stay in the yard with the sign for 7 days and includes delivery and pickup.' },
   ]
-  
-  export default function BullPack() {
+  const {products} = data;
+  export default function BullPack(props) {
+    const {product, onAdd} = props;
+    const { addItem } = useCart();
     return (
       <div className="bg-white">
         <section aria-labelledby="features-heading" className="relative">
@@ -36,10 +41,14 @@ const features = [
               </h2>
               <p className="mt-4 text-4xl font-extrabold text-indigo-600 tracking-tight">Bull Pack</p>
               <p className="mt-4 text-gray-500">
-                This Package is the best of the best, this is perfect for someone that you want to take over their entire yard to congratulate or just give a good laugh to with 2 special messages.
+              This Package is the best of the best, this is perfect for someone that you want to take over their entire yard to congratulate or just give a good laugh to with 2 special messages.
               </p>
-  
-              <dl className="mt-10 grid grid-cols-1 gap-y-10 gap-x-8 text-sm sm:grid-cols-2">
+              <br></br>
+
+              <button className="bg-blue-600 text-white hover:opacity-75 p-2 rounded-3xl">
+                Add to Cart
+              </button>
+                <dl className="mt-10 grid grid-cols-1 gap-y-10 gap-x-8 text-sm sm:grid-cols-2">
                 {features.map((feature) => (
                   <div key={feature.name}>
                     <dt className="font-medium text-indigo-900">{feature.name}</dt>
