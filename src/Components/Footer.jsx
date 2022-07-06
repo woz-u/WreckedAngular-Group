@@ -1,15 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { db } from '../firebase'; 
+import { doc, setDoc } from 'firebase/firestore';
+
+
 
 const footerNavigation = {
   company: [
     { name: "Who we are", href: "/AboutUs" },
-    { name: "Terms & Conditions", href: "#" },
-    { name: "Privacy", href: "#" },
+    { name: "Terms & Conditions", href: "https://www.termsandcondiitionssample.com/live.php?token=ijmHsxm4jUjmqnoROJdiRLUHeAMwSwC3" },
+    { name: "Privacy", href: "https://www.privacypolicygenerator.info/live.php?token=AFn6QInf62PcGi5BgKQzHrYHtlb8Up13" },
   ],
   account: [
     { name: "Manage Account", href: "/SignIn" },
     { name: "Create Account", href: "/Signup" },
-    { name: "Support", href: "#" },
+    { name: "Support", href: "mailto:beherdsocialmanager@gmail.com" },
 
   ],
   Socials: [
@@ -19,9 +24,36 @@ const footerNavigation = {
   ],
 };
 
+
+
 function Footer() {
+
+  const newsLetter = (email) => {
+    return setDoc(doc(db, 'NewsLetter', email), {
+    });
+  };
+
+  
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
+  
+  
+  const handleSubmitNewsLetter = async (e) => {
+    e.preventDefault();
+    setError("");
+    try {
+      await newsLetter(email);
+      navigate("");
+    } catch (e) {
+      setError(e.message);
+      console.log(e.message);
+    }
+    setEmail("");
+  };
+
   return (
-    <div>
+    <div className="border-t border-indigo-600">
       <footer aria-labelledby="footer-heading" className="bg-gray-900">
         <h2 id="footer-heading" className="sr-only">
           Footer
@@ -92,6 +124,8 @@ function Footer() {
                   Email address
                 </label>
                 <input
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   id="email-address"
                   type="text"
                   autoComplete="email"
@@ -102,6 +136,7 @@ function Footer() {
                   <button
                     type="submit"
                     className="w-full bg-indigo-600 border border-transparent rounded-md shadow-sm py-2 px-4 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-indigo-500"
+                    onClick={handleSubmitNewsLetter}
                   >
                     Sign up
                   </button>
@@ -110,8 +145,8 @@ function Footer() {
             </div>
           </div>
 
-          <div className="border-t border-gray-800 py-10">
-            <p className="text-sm text-gray-400 flex justify-center">
+          <div className="border-t border-indigo-600 py-10">
+            <p className="text-sm text-indigo-400 flex justify-center">
               Copyright &copy; 2021 BeHerd Company Inc.
             </p>
           </div>

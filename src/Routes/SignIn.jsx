@@ -18,7 +18,7 @@ const Signin = () => {
     signInWithPopup(auth, provider)
     .then((result) =>{
       console.log(result);
-    
+      
     }).catch((error) =>{
       console.log(error.message);
     });
@@ -40,7 +40,7 @@ const Signin = () => {
     setError("");
     try {
       await signIn(email, password);
-      navigate("/home");
+      navigate("/account");
     } catch (e) {
       setError(e.message);
       console.log(e.message);
@@ -48,7 +48,7 @@ const Signin = () => {
   };
 
   return (
-    <div className="bg-slate-800">
+    <div className="bg-slate-800 pb-10">
       <div className="max-w-[400px] mx-auto min-h-[600px] px-4 py-20 bg-slate-800">
         <h1 className="text-2xl font-bold text-white">Sign In</h1>
         <form onSubmit={handleSubmit}>
@@ -74,7 +74,7 @@ const Signin = () => {
               <AiFillLock className="absolute right-2 top-3 text-gray-800" />
             </div>
           </div>
-          <button className="w-full my-2 p-3 bg-button text-btnText rounded-2xl shadow-xl bg-indigo-700 text-btnText rounded-2xl shadow-xl text-white hover:bg-white hover:text-black">
+          <button className="w-full my-2 p-3 bg-button text-btnText bg-indigo-700 text-btnText rounded-2xl shadow-xl text-white hover:bg-white hover:text-black">
             Sign in
           </button>
         </form>
