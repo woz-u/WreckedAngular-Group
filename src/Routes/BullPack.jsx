@@ -4,7 +4,7 @@ import data from "./data";
 
 const features = [
     {
-      name: '$100.00 + Tax',
+      name: '$100.00',
       description: 'The Bull Pack includes the following.',
     },
     {
@@ -41,17 +41,14 @@ const features = [
               </h2>
               <p className="mt-4 text-4xl font-extrabold text-indigo-600 tracking-tight">Bull Pack</p>
               <p className="mt-4 text-gray-500">
-                This Package is the best of the best, this is perfect for someone that you want to take over their entire yard to congratulate or just give a good laugh to with 2 special messages.
+              This Package is the best of the best, this is perfect for someone that you want to take over their entire yard to congratulate or just give a good laugh to with 2 special messages.
               </p>
               <br></br>
-              <div>
-                 {products.map((p) => (
-                  <div key={p.id}>
-                    <button className="bg-blue-600 text-white hover:opacity-75 p-2" onClick={() => addItem(p)}>Add to cart</button>
-                  </div>
-                 ))}
-              </div>
-              <dl className="mt-10 grid grid-cols-1 gap-y-10 gap-x-8 text-sm sm:grid-cols-2">
+
+              <button className="bg-blue-600 text-white hover:opacity-75 p-2 rounded-3xl">
+                Add to Cart
+              </button>
+                <dl className="mt-10 grid grid-cols-1 gap-y-10 gap-x-8 text-sm sm:grid-cols-2">
                 {features.map((feature) => (
                   <div key={feature.name}>
                     <dt className="font-medium text-indigo-900">{feature.name}</dt>
@@ -60,19 +57,9 @@ const features = [
                 ))}
               </dl>
             </div>
-
-            <dl className="mt-10 grid grid-cols-1 gap-y-10 gap-x-8 text-sm sm:grid-cols-2">
-              {features.map((feature) => (
-                <div key={feature.name}>
-                  <dt className="font-medium text-indigo-900">
-                    {feature.name}
-                  </dt>
-                  <dd className="mt-2 text-gray-500">{feature.description}</dd>
-                </div>
-              ))}
-            </dl>
           </div>
-      </section>
-    </div>
-  );
-}
+        </section>
+      </div>
+    )
+  }
+  

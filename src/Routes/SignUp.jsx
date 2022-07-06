@@ -47,38 +47,38 @@ const Signup = () => {
   };
 
   return (
-    <div>
-      <div className="max-w-[400px] mx-auto min-h-[600px] px-4 py-20">
-        <h1 className="text-2xl font-bold">Sign Up</h1>
+    <div className="bg-slate-800">
+      <div className="max-w-[400px] mx-auto min-h-[600px] px-4 py-20 bg-slate-800">
+        <h1 className="text-2xl font-bold text-white">Create An Account</h1>
         {error ? <p className="bg-red-300 p-3 my-2">{error}</p> : null}
         <form onSubmit={handleSubmit}>
-          <div className="my-4">
+          <div className="my-4 text-white">
             <label>Email</label>
             <div className="my-2 w-full relative rounded-2xl shadow-xl">
               <input
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full p-2 bg-primary border border-input rounded-2xl"
+                className="w-full p-2 bg-primary border border-input rounded-2xl text-slate-800"
                 type="email"
               />
-              <AiOutlineMail className="absolute right-2 top-3 text-gray-400" />
+              <AiOutlineMail className="absolute right-2 top-3 text-gray-800" />
             </div>
           </div>
-          <div className="my-4">
+          <div className="my-4 text-white">
             <label>Password</label>
             <div className="my-2 w-full relative rounded-2xl shadow-xl">
               <input
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full p-2 bg-primary border border-input rounded-2xl"
+                className="w-full p-2 bg-primary border border-input rounded-2xl text-slate-800"
                 type="password"
               />
-              <AiFillLock className="absolute right-2 top-3 text-gray-400" />
+              <AiFillLock className="absolute right-2 top-3 text-gray-800" />
             </div>
           </div>
-          <button className="w-full my-2 p-3 bg-button text-btnText rounded-2xl shadow-xl">
-            Sign Up
+          <button className="w-full my-2 p-3 bg-indigo-700 text-btnText rounded-2xl shadow-xl text-white hover:bg-white hover:text-black">
+            Create Account
           </button>
         </form>
-        <p className="my-4">
+        <p className="my-4 text-white">
           Already have an account?{" "}
           <Link to="/signin" className="text-accent">
             Sign in
@@ -88,7 +88,7 @@ const Signup = () => {
           {!user ? (
             <a
               onClick={googleProvider}
-              className="p-2 block font-medium text-gray-900 hover:cursor-pointer"
+              className="p-2 block font-medium text-white hover:cursor-pointer hover:text-indigo-700"
             >
               Sign up with Google
             </a>
