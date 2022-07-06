@@ -21,7 +21,7 @@ const Signin = () => {
       
     }).catch((error) =>{
       console.log(error.message);
-    });
+    })
   };
 
 
@@ -74,7 +74,7 @@ const Signin = () => {
               <AiFillLock className="absolute right-2 top-3 text-gray-800" />
             </div>
           </div>
-          <button className="w-full my-2 p-3 bg-button text-btnText rounded-2xl shadow-xl bg-indigo-700 text-btnText rounded-2xl shadow-xl text-white hover:bg-white hover:text-black">
+          <button className="w-full my-2 p-3 bg-button text-btnText rounded-2xl shadow-xl bg-indigo-700 text-btnText text-white hover:bg-white hover:text-black">
             Sign in
           </button>
         </form>
