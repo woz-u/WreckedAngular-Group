@@ -21,6 +21,8 @@ export const AuthContextProvider = ({ children }) => {
       cart: [],
     });
   };
+
+
   const signIn = (email, password) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
@@ -48,3 +50,6 @@ export const AuthContextProvider = ({ children }) => {
 export const UserAuth = () => {
   return useContext(UserContext);
 };
+
+
+
