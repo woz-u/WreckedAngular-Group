@@ -28,8 +28,8 @@ function Footer() {
         </h2>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="py-20 xl:grid xl:grid-cols-3 xl:gap-8">
-            <div className="grid grid-cols-2 gap-4 xl:col-span-2">
-              <div className="flex space-between space-y-12 md:space-y-0 md:grid md:grid-cols-2 md:gap-8"> 
+            <div className="grid grid-cols-2 gap-4 xl:col-span-2 ">
+              <div className="flex space-between space-y-12 md:space-y-0 md:grid md:grid-cols-2 md:gap-8">
               <br></br>
                 <div>
                   <h3 className="text-large font-medium  text-indigo-500">About Us</h3>
@@ -111,7 +111,7 @@ function Footer() {
           </div>
 
           <div className="border-t border-gray-800 py-10">
-            <p className="text-sm text-gray-400">
+            <p className="text-sm text-gray-400 flex justify-center">
               Copyright &copy; 2021 BeHerd Company Inc.
             </p>
           </div>

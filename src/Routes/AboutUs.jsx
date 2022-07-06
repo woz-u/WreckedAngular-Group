@@ -1,6 +1,6 @@
 export default function AboutUs() {
   return (
-    <div className="relative">
+    <div className="relative ">
       <div className="lg:absolute lg:inset-0">
         <div className="lg:absolute lg:inset-y-0 lg:left-0 lg:w-1/2">
           <img

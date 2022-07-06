@@ -58,7 +58,7 @@ const navigation = {
     },
   ],
   pages: [
-    { name: "About Us", href: "/AboutUs" },
+    { name: "About Us", href: "/AboutUs"},
     { name: "Reviews", href: "/Reviews" },
   ],
 };
@@ -139,7 +139,7 @@ const Navbar = () => {
                     className="-m-2 p-2 rounded-md inline-flex items-center justify-center text-gray-400"
                     onClick={() => setMobileMenuOpen(false)}
                   >
-                    <span className="sr-only">Close menu</span>
+                    <span className="sr-only hover:text-slate-300">Close menu</span>
                     <XIcon className="h-6 w-6" aria-hidden="true" />
                   </button>
                 </div>
@@ -193,7 +193,7 @@ const Navbar = () => {
                               </a>
                               <p
                                 aria-hidden="true"
-                                className="mt-1 text-sm text-gray-500"
+                                className="mt-1 text-sm text-gray-500 hover:text-slate-300"
                               >
                                 Shop now
                               </p>
@@ -222,7 +222,7 @@ const Navbar = () => {
                   <div className="flow-root">
                     <a
                       href="/SignUp"
-                      className="-m-2 p-2 block font-medium text-gray-900"
+                      className="-m-2 p-2 block font-medium text-gray-900 hover:text-slate-300"
                     >
                       Create an account
                     </a>
@@ -230,7 +230,7 @@ const Navbar = () => {
                   <div className="flow-root t">
                     {user?.email ? (
                       <div>
-                        <Link to="/" className="p-4 text-white">
+                        <Link to="/" className="p-4 text-white hover:text-slate-300">
                           Account
                         </Link>
                         <button onClick={handleSignOut}>Sign out</button>
@@ -239,15 +239,15 @@ const Navbar = () => {
                       <div className="hidden md:block">
                         <Link
                           to="/signin"
-                          className="p-4 hover:text-accent text-white"
+                          className="p-4 text-white hover:text-slate-300"
                         >
                           Sign In
                         </Link>
                         <Link
                           to="/signup"
-                          className="bg-button text-btnText px-5 py-2 ml-2 rounded-2xl shadow-lg hover:shadow-2xl text-white"
+                          className="bg-button text-btnText px-5 py-2 ml-2 rounded-2xl shadow-lg hover:text-slate-300 text-white"
                         >
-                          Sign Up
+                          Create Account
                         </Link>
                       </div>
                     )}
@@ -351,14 +351,14 @@ const Navbar = () => {
                   </div>
                 ) : (
                   <div className="hidden md:block">
-                    <Link to="/signin" className="text-sm font-medium text-white hover:text-gray-100 p-5">
+                    <Link to="/signin" className="text-sm font-medium text-white p-5 hover:text-slate-300">
                       Sign In
                     </Link>
                     <Link
                       to="/signup"
-                      className="text-sm font-medium text-white hover:text-gray-100"
+                      className="text-sm font-medium text-white hover:text-slate-300"
                     >
-                      Sign Up
+                      Create Account
                     </Link>
                   </div>
                 )}
@@ -509,7 +509,7 @@ const Navbar = () => {
                           <span className="ml-2 text-sm font-medium text-white">
                           <button className="badge">({totalUniqueItems})</button>
                           </span>
-                          <span className="sr-only">
+                          <span className="sr-only ">
                             items in cart, view bag
                           </span>
                         </a>
