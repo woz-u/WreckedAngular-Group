@@ -299,10 +299,10 @@ const Navbar = () => {
       </Transition.Root>
 
       {/* Navigation */}
-      <header className="relative z-10">
+      <header className="relative z-10 ">
         <nav aria-label="Top">
           {/* Top navigation */}
-          <div className="bg-gray-900">
+          <div className="bg-gray-900 border-b border-indigo-600">
             <div className="max-w-7xl mx-auto h-10 px-4 flex items-center justify-between sm:px-6 lg:px-8">
               {/* Currency selector */}
               <form>
@@ -310,7 +310,7 @@ const Navbar = () => {
                   <label htmlFor="desktop-currency" className="sr-only">
                     Currency
                   </label>
-                  <div className="-ml-2 group relative bg-gray-900 border-transparent rounded-md focus-within:ring-2 focus-within:ring-white">
+                  <div className="-ml-2 group relative border-transparent rounded-md focus-within:ring-2 focus-within:ring-white">
                     <select
                       id="desktop-currency"
                       name="currency"
@@ -367,7 +367,7 @@ const Navbar = () => {
           </div>
 
           {/* Secondary navigation */}
-          <div className="backdrop-blur-md backdrop-filter bg-opacity-75 bg-black ">
+          <div className="backdrop-blur-md backdrop-filter bg-opacity-100 bg-slate-900 border-b border-indigo-600">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div>
                 <div className="h-16 flex items-center justify-between">
@@ -416,7 +416,7 @@ const Navbar = () => {
                                       aria-hidden="true"
                                     />
 
-                                    <div className="relative bg-white">
+                                    <div className="relative bg-slate-800 border-t border-indigo-600">
                                       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                                         <div className="grid grid-cols-4 gap-y-10 gap-x-8 py-16">
                                           {category.featured.map((item) => (
@@ -424,7 +424,7 @@ const Navbar = () => {
                                               key={item.name}
                                               className="group relative"
                                             >
-                                              <div className="aspect-w-1 aspect-h-1 rounded-md bg-gray-100 overflow-hidden group-hover:opacity-75">
+                                              <div className="aspect-w-1 aspect-h-1 rounded-md bg-gray-100 overflow-hidden group-hover:opacity-60 text-white">
                                                 <img
                                                   src={item.imageSrc}
                                                   logo
@@ -434,7 +434,7 @@ const Navbar = () => {
                                               </div>
                                               <a
                                                 href={item.href}
-                                                className="mt-4 block font-medium text-gray-900"
+                                                className="mt-4 block font-medium text-indigo-100"
                                               >
                                                 <span
                                                   className="absolute z-10 inset-0"
@@ -444,7 +444,7 @@ const Navbar = () => {
                                               </a>
                                               <p
                                                 aria-hidden="true"
-                                                className="mt-1"
+                                                className="mt-1 text-indigo-300"
                                               >
                                                 Get Details
                                               </p>
@@ -507,7 +507,7 @@ const Navbar = () => {
                             aria-hidden="true"
                           />
                           <span className="ml-2 text-sm font-medium text-white">
-                          <button className="badge">({totalUniqueItems})</button>
+                          <button className="">({totalUniqueItems})</button>
                           </span>
                           <span className="sr-only ">
                             items in cart, view bag

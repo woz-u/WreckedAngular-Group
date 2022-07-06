@@ -47,7 +47,7 @@ const Signup = () => {
   };
 
   return (
-    <div className="bg-slate-800">
+    <div className="bg-slate-800 pb-10">
       <div className="max-w-[400px] mx-auto min-h-[600px] px-4 py-20 bg-slate-800">
         <h1 className="text-2xl font-bold text-white">Create An Account</h1>
         {error ? <p className="bg-red-300 p-3 my-2">{error}</p> : null}

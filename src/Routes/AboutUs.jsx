@@ -1,6 +1,6 @@
 export default function AboutUs() {
   return (
-    <div className="relative ">
+    <div className="relative bg-slate-800">
       <div className="lg:absolute lg:inset-0">
         <div className="lg:absolute lg:inset-y-0 lg:left-0 lg:w-1/2">
           <img
@@ -12,16 +12,16 @@ export default function AboutUs() {
       </div>
       <div className="relative pt-12 pb-16 px-4 sm:pt-16 sm:px-6 lg:px-8 lg:max-w-7xl lg:mx-auto lg:grid lg:grid-cols-2">
         <div className="lg:col-start-2 lg:pl-8">
-          <div className="text-base max-w-prose mx-auto lg:max-w-lg lg:ml-auto lg:mr-0 bg-white">
-            <h2 className="mt-2 text-4xl leading-8 font-extrabold tracking-tight text-indigo-600 sm:text-4xl">
+          <div className="text-base max-w-prose mx-auto lg:max-w-lg lg:ml-auto lg:mr-0 bg-grey-800">
+            <h2 className="mt-2 text-4xl leading-8 font-extrabold tracking-tight text-indigo-400 sm:text-4xl">
               What is Be Herd?
             </h2>
-            <p className="mt-8 text-2xl text-indigo-500">
+            <p className="mt-8 text-2xl text-white">
             Be Herd is the latest way to celebrate a birthday, anniversary, or any other special occasion in the most hilarious way. Celebrate that special person by filling their yard with a herd of cow lawn ornaments. Set up and pickup included. Let your message Be Herd.
             </p>
             <div className="py-20">
-              <h2 className="py-10 text-indigo-600 text-4xl font-bold">Our Team</h2>
-              <p className="text-2xl text-indigo-500">
+              <h2 className="py-10 text-indigo-400 text-4xl font-bold">Our Team</h2>
+              <p className="text-2xl text-white">
                 Wrecked Angular is made up of 3 members, Sam, Jeremy, and Tim. We met at a coding bootcamp, Woz-U, and from there our relationship flourished.This website is the masterpiece we came up with. We hope you enjoy the idea and website.
               </p>
             </div>
