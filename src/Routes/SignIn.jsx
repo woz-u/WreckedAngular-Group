@@ -57,7 +57,7 @@ const Signin = () => {
             <div className="my-2 w-full relative rounded-2xl shadow-xl">
               <input
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full p-2 bg-primary border border-input rounded-2xl"
+                className="w-full p-2 bg-primary border border-input rounded-2xl text-slate-800"
                 type="email"
               />
               <AiOutlineMail className="absolute right-2 top-3 text-gray-800" />
@@ -68,7 +68,7 @@ const Signin = () => {
             <div className="my-2 w-full relative rounded-2xl shadow-xl">
               <input
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full p-2 bg-primary border border-input rounded-2xl"
+                className="w-full p-2 bg-primary border border-input rounded-2xl text-slate-800"
                 type="password"
               />
               <AiFillLock className="absolute right-2 top-3 text-gray-800" />
