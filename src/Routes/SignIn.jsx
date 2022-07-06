@@ -18,7 +18,7 @@ const Signin = () => {
     signInWithPopup(auth, provider)
     .then((result) =>{
       console.log(result);
-    
+      
     }).catch((error) =>{
       console.log(error.message);
     });
@@ -40,7 +40,7 @@ const Signin = () => {
     setError("");
     try {
       await signIn(email, password);
-      navigate("/home");
+      navigate("/account");
     } catch (e) {
       setError(e.message);
       console.log(e.message);

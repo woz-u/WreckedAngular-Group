@@ -14,6 +14,7 @@ import SignIn from "./Routes/SignIn";
 import SignUp from "./Routes/SignUp";
 import Reviews from "./Routes/Reviews";
 import { AuthContextProvider } from "./context/AuthContext";
+import Account from './Routes/Account';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
               <Route path="/AboutUs" element={<AboutUs />} />
               <Route path="/Home" element={<Home />} />
               <Route path="/Reviews" element={<Reviews />} />
+              <Route path="/Account" element={<Account/>} />
             </Routes>
           <Footer />
         </CartProvider>
