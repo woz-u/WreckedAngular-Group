@@ -27,9 +27,6 @@ const {products} = data;
     <Showandhide></Showandhide>
   }
   
-      
-
-    
   return (
     <div>
       

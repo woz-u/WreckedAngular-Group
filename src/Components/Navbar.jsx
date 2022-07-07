@@ -102,7 +102,7 @@ const Navbar = () => {
   };
 
   return (
-    <div>
+    <div className="border-t-4 border-slate-600">
       {/* Mobile menu */}
       <Transition.Root show={mobileMenuOpen} as={Fragment}>
         <Dialog
@@ -146,7 +146,7 @@ const Navbar = () => {
 
                 {/* Links */}
                 <Tab.Group as="div" className="mt-2">
-                  <div className="border-b border-gray-200">
+                  <div className="border-b border-indigo-600">
                     <Tab.List className="-mb-px flex px-4 space-x-8">
                       {navigation.categories.map((category) => (
                         <Tab
@@ -156,7 +156,7 @@ const Navbar = () => {
                               selected
                                 ? "text-indigo-600 border-indigo-600"
                                 : "text-gray-900 border-transparent",
-                              "flex-1 whitespace-nowrap py-4 px-1 border-b-2 text-base font-medium"
+                              "flex-1 whitespace-nowrap py-4 px-1 border-2 text-base font-medium"
                             )
                           }
                         >
@@ -254,7 +254,7 @@ const Navbar = () => {
                   </div>
                 </div>
 
-                <div className="border-t border-gray-200 py-6 px-4 space-y-6">
+                <div className="border-t border-slate-400 py-6 px-4 space-y-6">
                   {/* Currency selector */}
                   <form>
                     <div className="inline-block">
@@ -302,7 +302,7 @@ const Navbar = () => {
       <header className="relative z-10 ">
         <nav aria-label="Top">
           {/* Top navigation */}
-          <div className="bg-gray-900 border-b border-indigo-600">
+          <div className="bg-gray-900 border-b border-slate-300">
             <div className="max-w-7xl mx-auto h-10 px-4 flex items-center justify-between sm:px-6 lg:px-8">
               {/* Currency selector */}
               <form>
@@ -367,7 +367,7 @@ const Navbar = () => {
           </div>
 
           {/* Secondary navigation */}
-          <div className="backdrop-blur-md backdrop-filter bg-opacity-100 bg-slate-900 border-b border-indigo-600">
+          <div className="backdrop-blur-md backdrop-filter bg-opacity-100 bg-slate-900 border-b-4 border-slate-600">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div>
                 <div className="h-16 flex items-center justify-between">
@@ -416,7 +416,7 @@ const Navbar = () => {
                                       aria-hidden="true"
                                     />
 
-                                    <div className="relative bg-slate-800 border-t border-indigo-600">
+                                    <div className="relative bg-slate-800 border-t-4 border-slate-600">
                                       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                                         <div className="grid grid-cols-4 gap-y-10 gap-x-8 py-16">
                                           {category.featured.map((item) => (
