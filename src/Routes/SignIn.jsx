@@ -21,7 +21,7 @@ const Signin = () => {
       
     }).catch((error) =>{
       console.log(error.message);
-    });
+    })
   };
 
 
