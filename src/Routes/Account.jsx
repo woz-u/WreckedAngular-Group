@@ -41,15 +41,8 @@ const Account = () => {
             </div>
             <div className="flex justify-center">
               <form>
-                <textarea
-                  className="min-h-[300px] min-w-[600px] max-w-[700px] bg-slate-300 
-                border-indigo-600 rounded-md shadow-sm py-2 px-4 text-base placeholder-black 
-                focus:outline-none focus:border-white focus:ring-2 focus:ring-offset-2 
-                focus:ring-offset-gray-900 focus:ring-indigo-600 resize text-black"
-                  placeholder="Please Write Us A Review">
-                    
-                  </textarea>
-
+              
+                <textarea className="min-h-[300px] min-w-[600px] max-w-[700px] bg-slate-300 border-indigo-600 rounded-md shadow-sm py-2 px-4 text-base placeholder-black focus:outline-none focus:border-white focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-indigo-600 resize text-black" placeholder="Please Write Us A Review"  ></textarea>
                 <div className="flex flex-row max-w-[120px] px-2 py-4 mx-auto justify-between sm:flex-row text-center relative right-16">
                   <div className="">
                     <button className="bg-blue-600 text-white hover:opacity-75 p-2 rounded-3xl">

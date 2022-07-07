@@ -53,7 +53,7 @@ function Footer() {
   };
 
   return (
-    <div className="border-t border-indigo-600">
+    <div className="border-t-4 border-slate-600" >
       <footer aria-labelledby="footer-heading" className="bg-gray-900">
         <h2 id="footer-heading" className="sr-only">
           Footer
