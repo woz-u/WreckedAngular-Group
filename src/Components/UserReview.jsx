@@ -1,3 +1,7 @@
+//This is in here for the reviews page crud method using the data base
+// only users can post a review which they can update and delete their reviews on their
+// account but all user reviews are posted on the reviews page... 
+
 import React, { useState, useEffect } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { Link } from "react-router-dom";
@@ -7,12 +11,12 @@ import { UserAuth } from "../context/AuthContext";
 
 
 const UserReview = () => {
-  const [reviews, setCoins] = useState([]);
+  const [reviews, setReviews] = useState([]);
   const {user} = UserAuth();
 
   useEffect(() => {
     onSnapshot(doc(db, 'users', `${user?.email}`),(doc)=>{
-      setCoins(doc.data()?.watchList)
+      setReviews(doc.data()?.reviews)
     })
   },[user?.email])
 
