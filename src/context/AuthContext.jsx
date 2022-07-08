@@ -17,8 +17,7 @@ export const AuthContextProvider = ({ children }) => {
   const signUp = (email, password) => {
     createUserWithEmailAndPassword(auth, email, password);
     return setDoc(doc(db, 'users', email), {
-      reviews: [],
-      cart: [],
+      cart: []
     });
   };
 
