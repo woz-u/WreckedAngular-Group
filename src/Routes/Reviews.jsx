@@ -46,15 +46,15 @@ export default function Reviews() {
   return (
     <div className="bg-slate-800 pb-40">
       <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
-        <h2 className="text-4xl font-medium text-white text-center">
+        <h2 className="text-4xl font-medium text-white pl-6">
           Recent reviews
         </h2>
-        <div className="mt-6 pb-10 border-t border-b border-indigo-600 divide-y divide-white space-y-10">
+        <div className="mt-6 border-t border-b border-indigo-600 divide-y divide-indigo-600">
           {/* <SavedReviews/> */}
           {reviews.map((reviews) => {
             return (
-              <div className="text-slate-400 ">
-                <h1 className=""> Review Test : {reviews.review}</h1>
+              <div className="text-slate-200 border-indigo-600">
+                <h1 className="m-7"> Review Test : {reviews.review}</h1>
               </div>
             );
           })}

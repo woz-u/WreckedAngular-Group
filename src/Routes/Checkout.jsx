@@ -30,7 +30,7 @@ const {products} = data;
   return (
     <div>
       
-    <div className="bg-gray-900">
+    <div className="bg-slate-800">
       {/* Background color split screen for large screens */}
       <div
         className="hidden lg:block fixed top-0 left-0 w-1/2 bg-gray-900"
@@ -48,7 +48,7 @@ const {products} = data;
           aria-labelledby="summary-heading"
           className="pt-16 pb-10 px-4 sm:px-6 lg:px-0 lg:pb-16 lg:bg-transparent lg:row-start-1 lg:col-start-2 bg-gray-700"
         >
-          <div className="max-w-lg mx-auto lg:max-w-none bg-gray-700 pt-10 pb-10 pl-10 pr-10">
+          <div className="max-w-lg mx-auto lg:max-w-none bg-slate-700 pt-10 pb-10 pl-10 pr-10 rounded-xl border-4 border-indigo-600">
             <h2 id="summary-heading" className="text-lg font-medium text-white">
               Order summary
             </h2>
@@ -96,7 +96,7 @@ const {products} = data;
 
             <Popover className="inset-x-0 flex flex-col-reverse text-sm font-medium text-white lg:hidden">
               <div className="relative z-10 bg-gray-700 border-t border-white px-4 sm:px-6">
-                <div className="max-w-lg mx-auto">
+                <div className="max-w-lg mx-auto ">
                   <Popover.Button className="w-full flex items-center py-6 font-medium">
                     <span className="text-white mr-auto">Total</span>
                     <span className="text-white mr-2">$361.80</span>
@@ -132,7 +132,7 @@ const {products} = data;
                     leaveTo="translate-y-full"
                   >
                     <Popover.Panel className="relative bg-gray-50 px-4 py-6 sm:px-6">
-                      <dl className="max-w-lg mx-auto space-y-6">
+                      <dl className="max-w-lg mx-auto space-y-6 ">
                         <div className="flex items-center justify-between">
                           <dt className="text-white">Subtotal</dt>
                           <dd>$320.00</dd>
@@ -157,7 +157,7 @@ const {products} = data;
         </section>
 
         <form className="pt-16 pb-36 px-4 sm:px-6 lg:pb-16 lg:px-0 lg:row-start-1 lg:col-start-1">
-          <div className="max-w-lg mx-auto lg:max-w-none">
+          <div className="max-w-lg mx-auto lg:max-w-none bg-slate-700 p-10 rounded-xl border-4 border-indigo-600">
             <section aria-labelledby="contact-info-heading">
               <h2
                 id="contact-info-heading"
