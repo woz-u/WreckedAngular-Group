@@ -53,6 +53,10 @@ const features = [
                   <div key={feature.name}>
                     <dt className="font-medium text-indigo-900">{feature.name}</dt>
                     <dd className="mt-2 text-gray-500">{feature.description}</dd>
+                    <button className="bg-blue-600 text-white hover:opacity-75 p-2 rounded-3xl">
+                      Next Package
+                    </button>
+
                   </div>
                 ))}
               </dl>

@@ -1,23 +1,5 @@
 import React from "react";
-import { Fragment, useState } from "react";
-import { Dialog, Popover, Tab, Transition } from "@headlessui/react";
-import {
-  MenuIcon,
-  QuestionMarkCircleIcon,
-  SearchIcon,
-  ShoppingBagIcon,
-  XIcon,
-} from "@heroicons/react/outline";
-import CalfPack from "./CalfPack";
-import CowPack from "./CowPack";
-import BullPack from "./BullPack";
-import MadCow from "./MadCow";
 import BeHerd from "../Assets/BeHerdBackground.png";
-import BeHerdLogo from "../Assets/BeHerdLogo.png";
-import Advance from "../Assets/Advance.png";
-import Premium from "../Assets/Premium.png";
-import Revenge from "../Assets/Revenge.png";
-import Checkout from "./Checkout";
 import { Link } from "react-router-dom";
 import FeaturedYard1 from "../Assets/FeaturedYard1.jpg";
 import FeaturedYard2 from "../Assets/FeaturedYard2.jpg";
