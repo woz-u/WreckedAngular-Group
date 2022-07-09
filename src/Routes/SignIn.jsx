@@ -4,7 +4,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { UserAuth } from "../context/AuthContext";
 import {signInWithPopup, signOut} from 'firebase/auth';
 import {auth, provider} from '../firebase';
-import { useAuthState} from 'react-firebase-hooks/auth'
+import { useAuthState} from 'react-firebase-hooks/auth';
+import { GoogleButton } from 'react-google-button';
 
 const Signin = () => {
   const [user, loading] = useAuthState(auth);
@@ -21,7 +22,7 @@ const Signin = () => {
       
     }).catch((error) =>{
       console.log(error.message);
-    });
+    })
   };
 
 
@@ -48,9 +49,9 @@ const Signin = () => {
   };
 
   return (
-    <div className="bg-slate-800">
+    <div className="bg-slate-800 pb-10">
       <div className="max-w-[400px] mx-auto min-h-[600px] px-4 py-20 bg-slate-800">
-        <h1 className="text-2xl font-bold text-white">Sign In</h1>
+        <h1 className="text-2xl font-bold text-white text-center">Sign In</h1>
         <form onSubmit={handleSubmit}>
           <div className="my-4 text-white">
             <label>Email</label>
@@ -74,13 +75,13 @@ const Signin = () => {
               <AiFillLock className="absolute right-2 top-3 text-gray-800" />
             </div>
           </div>
-          <button className="w-full my-2 p-3 bg-button text-btnText rounded-2xl shadow-xl bg-indigo-700 text-btnText rounded-2xl shadow-xl text-white hover:bg-white hover:text-black">
+          <button className="w-full my-2 p-3 bg-button text-btnText bg-indigo-700 text-btnText rounded-2xl shadow-xl text-white hover:bg-white hover:text-black">
             Sign in
           </button>
         </form>
-        <p className="my-4 text-white">
+        <p className="my-4 text-white text-center">
           Don't have an account?{" "}
-          <Link to="/signup" className="text-accent">
+          <Link to="/signup" className="text-accent text-center">
             Sign up
           </Link>
         </p>
@@ -90,7 +91,7 @@ const Signin = () => {
               onClick={googleProvider}
               className="p-2 block font-medium text-white hover:cursor-pointer hover:text-indigo-700"
             >
-              Sign in with Google
+              <GoogleButton/>
             </a>
           ) : (
            null
