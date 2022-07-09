@@ -1,45 +1,35 @@
-import React, {useState} from "react";
+import React, {useState, Component} from "react";
 import { Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import { ChevronUpIcon } from "@heroicons/react/solid";
 import data from "./data";
 import Showandhide from "../Components/Showandhide";
+import { useCart } from 'react-use-cart';
 
-const products = [
-  {
-    id: 1,
-    name: "Calf Package",
-    image: "https://cdn.discordapp.com/attachments/938922482432376843/984923525494231051/1.png",
-    price: "$60.00"
-},
-{
-    id: 2,
-    name: "Cow Package",
-    image: "https://cdn.discordapp.com/attachments/938922482432376843/984923525729108008/2.png",
-    price: "$80.00"
-},
-{
-    id: 3,
-    name: "Bull Package",
-    image: "https://cdn.discordapp.com/attachments/938922482432376843/984923526001754232/3.png",
-    price: "$100.00"
-},
-{
-    id: 4,
-    name: "Mad Cow Package",
-    image: "https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fcdn.discordapp.com%2Fattachments%2F938922482432376843%2F985937296954130432%2FRevenge.png",
-    price: "$50.00"
-}
-]; // More products...
 
-const Checkout = () => {
-  function Showdelivery(props){
-    const difaddress = () =>{
-      
-    }
-  }
+const {products} = data;
+
+
+  function Checkout() {
+    const {
+      isEmpty,
+      totalUniqueItems,
+      items,
+      updateItemQuantity,
+      removeItem,
+  } = useCart(0);
+  const itemsPrice = items.reduce((a, c) => a + c.price * c.quantity, 0);
+  const taxPrice = itemsPrice * 0.14;
+  const deliveryPrice = itemsPrice > 150 ? 0 : 50;
+  const totalPrice = itemsPrice + taxPrice + deliveryPrice;
+  
+
+  const[toggle, setToggle] = useState(false)
+  
   return (
-    <div className="bg-gray-900">
+    <div>
+      
+    <div className="bg-slate-800">
       {/* Background color split screen for large screens */}
       <div
         className="hidden lg:block fixed top-0 left-0 w-1/2 bg-gray-900"
@@ -57,123 +47,56 @@ const Checkout = () => {
           aria-labelledby="summary-heading"
           className="pt-16 pb-10 px-4 sm:px-6 lg:px-0 lg:pb-16 lg:bg-transparent lg:row-start-1 lg:col-start-2 bg-gray-700"
         >
-          <div className="max-w-lg mx-auto lg:max-w-none">
+          <div className="max-w-lg mx-auto lg:max-w-none bg-slate-700 pt-10 pb-10 pl-10 pr-10 rounded-xl border-4 border-indigo-600">
             <h2 id="summary-heading" className="text-lg font-medium text-white">
               Order summary
             </h2>
+            
 
-            <ul
-              role="list"
-              className="text-sm font-medium text-white divide-y divide-gray-50 "
-            >
-              {products.map((product) => (
-                <li
-                  key="{product.id}"
-                  className="flex items-start py-6 space-x-4"
-                >
-                  <img
-                    src="{product.imageSrc}"
-                    alt="{product.imageAlt}"
-                    className="flex-none w-20 h-20 rounded-md object-center object-cover"
-                  />
-                  <div className="flex-auto space-y-1">
-                    <h3>{product.name}</h3>
-                    <p className="text-white">{product.color}</p>
-                    <p className="text-white">{product.size}</p>
-                  </div>
-                  <p className="flex-none text-base font-medium">
-                    {product.price}
-                  </p>
-                </li>
-              ))}
+        <div className="text-white">
+          <ul >
+                {items.map((item) => (
+                    <li  key={item.id}>
+                        {item.quantity} x {item.name} &mdash;
+                        <button className="text-white bg-blue-600 p-2 rounded-3xl" onClick={() => updateItemQuantity(item.id, item.quantity - 1)}>
+                            -
+                        </button>
+                        <button className="text-white bg-blue-600 p-2 rounded-3xl" onClick={() => updateItemQuantity(item.id, item.quantity + 1)}>
+                            +
+                        </button>
+                        <button className="text-white bg-red-600 p-2 rounded-3xl" onClick={() => removeItem(item.id)}>&times;</button>
+                        <div className="">  ${item.price}x{item.quantity}</div>
+
+                    </li>
+                ))}
             </ul>
-
-            <dl className="hidden text-sm font-medium text-white space-y-6 border-t border-white pt-6 lg:block">
-              <div className="flex items-center justify-between">
-                <dt className="text-white">Subtotal</dt>
-                <dd>$320.00</dd>
-              </div>
-
-              <div className="flex items-center justify-between">
-                <dt className="text-white">Delivery</dt>
-                <dd>$15.00</dd>
-              </div>
-
-              <div className="flex items-center justify-between">
-                <dt className="text-white">Taxes</dt>
-                <dd>$26.80</dd>
-              </div>
-
-              <div className="flex items-center justify-between border-t border-white pt-6">
-                <dt className="text-white">Total</dt>
-                <dd className="text-white">$361.80</dd>
-              </div>
-            </dl>
-
-            <Popover className="inset-x-0 flex flex-col-reverse text-sm font-medium text-white lg:hidden">
-              <div className="relative z-10 bg-gray-700 border-t border-white px-4 sm:px-6">
-                <div className="max-w-lg mx-auto">
-                  <Popover.Button className="w-full flex items-center py-6 font-medium">
-                    <span className="text-white mr-auto">Total</span>
-                    <span className="text-white mr-2">$361.80</span>
-                    <ChevronUpIcon
-                      className="w-5 h-5 text-white"
-                      aria-hidden="true"
-                    />
-                  </Popover.Button>
+            {items.length !== 0 && (
+              <>
+                <hr></hr>
+                <div className="row text-white">
+                  <div className="col-2">Items Price</div>
+                  <div className="col-1">${itemsPrice.toFixed(2)}</div>
                 </div>
-              </div>
-
-              <Transition.Root as="{Fragment}">
-                <div>
-                  <Transition.Child
-                    as="{Fragment}"
-                    enter="transition-opacity ease-linear duration-300"
-                    enterFrom="opacity-0"
-                    enterTo="opacity-100"
-                    leave="transition-opacity ease-linear duration-300"
-                    leaveFrom="opacity-100"
-                    leaveTo="opacity-0"
-                  >
-                    <Popover.Overlay className="fixed inset-0 bg-white bg-opacity-25" />
-                  </Transition.Child>
-
-                  <Transition.Child
-                    as="{Fragment}"
-                    enter="transition ease-in-out duration-300 transform"
-                    enterFrom="translate-y-full"
-                    enterTo="translate-y-0"
-                    leave="transition ease-in-out duration-300 transform"
-                    leaveFrom="translate-y-0"
-                    leaveTo="translate-y-full"
-                  >
-                    <Popover.Panel className="relative bg-gray-50 px-4 py-6 sm:px-6">
-                      <dl className="max-w-lg mx-auto space-y-6">
-                        <div className="flex items-center justify-between">
-                          <dt className="text-white">Subtotal</dt>
-                          <dd>$320.00</dd>
-                        </div>
-
-                        <div className="flex items-center justify-between">
-                          <dt className="text-white">Delivery</dt>
-                          <dd>$15.00</dd>
-                        </div>
-
-                        <div className="flex items-center justify-between">
-                          <dt className="text-white">Taxes</dt>
-                          <dd>$26.80</dd>
-                        </div>
-                      </dl>
-                    </Popover.Panel>
-                  </Transition.Child>
+                <div className="row text-white">
+                  <div className="col-2">Tax Price</div>
+                  <div className="col-1">${taxPrice.toFixed(2)}</div>
                 </div>
-              </Transition.Root>
-            </Popover>
+                <div className="row text-white">
+                  <div className="col-2">Delivery Price</div>
+                  <div className="col-1">${deliveryPrice.toFixed(2)}</div>
+                </div>
+                <div className="row text-white">
+                  <div className="col-2"><strong>Total Price</strong></div>
+                  <div className="col-1"><strong>${totalPrice.toFixed(2)}</strong></div>
+                </div>
+              </>
+            )}
+            </div>
           </div>
         </section>
 
         <form className="pt-16 pb-36 px-4 sm:px-6 lg:pb-16 lg:px-0 lg:row-start-1 lg:col-start-1">
-          <div className="max-w-lg mx-auto lg:max-w-none">
+          <div className="max-w-lg mx-auto lg:max-w-none bg-slate-700 p-10 rounded-xl border-4 border-indigo-600">
             <section aria-labelledby="contact-info-heading">
               <h2
                 id="contact-info-heading"
@@ -402,12 +325,7 @@ const Checkout = () => {
             </section>
 
             <section aria-labelledby="billing-heading" className="mt-10">
-              <h2
-                id="billing-heading"
-                className="text-lg font-medium text-white"
-              >
-                Delivery information
-              </h2>
+
               
               <div className="mt-6 flex items-center">
                 <input
@@ -416,17 +334,19 @@ const Checkout = () => {
                   type="checkbox"
                   defaultChecked
                   className="h-4 w-4 border-white rounded text-indigo-600 focus:ring-indigo-500"
-                  onChange={Showdelivery}
+                  onClick={() => setToggle(!toggle)}
                 />
+                
                 <div className="ml-2">
                   <label
                     htmlFor="same-as-shipping"
                     className="text-sm font-medium text-white"
                   >
-                    Same as billing information
-                  </label>
+                    Delivery information same as billing information.
+                  </label> 
                 </div>
-              </div>
+              </div><br></br>
+              {toggle && (<Showandhide></Showandhide>)}
             </section>
             
 
@@ -445,6 +365,7 @@ const Checkout = () => {
         </form>
       </div>
     </div>
+  </div>
   );
 };
 
