@@ -106,14 +106,14 @@ export default function Home() {
                 Make sure to share your Be Herd experience with us on our
                 socials!
               </p>
-              <div className='flex flex-row max-w-[1240px] px-2 py-4 mx-auto justify-between sm:flex-row text-center text-white'>
-                <div className="px-10 text-6xl">
+              <div className='flex flex-row max-w-[1240px] py-4 mx-auto justify-between sm:flex-row text-center text-white'>
+                <div className="px-8 text-4xl">
                 <a href="https://www.facebook.com/profile.php?id=100082685704890" className="inline-block bg-transparent  border-transparent rounded-md px-5 text-white hover:bg-indigo-600 hover:text-black"><FaFacebook /></a>
                 </div>
-                <div className="px-10 text-6xl">
+                <div className="px-8 text-4xl">
                 <a href="https://www.instagram.com/be_herd_manager/" className="inline-block bg-transparent  border-transparent rounded-md px-5 text-white hover:bg-indigo-600 hover:text-black"><FaInstagram /></a>
                 </div>
-                <div className="px-10 text-6xl">
+                <div className="px-8 text-4xl">
                 <a href="https://twitter.com/ManagerHerd" className="inline-block bg-transparent  border-transparent rounded-md px-5 text-white hover:bg-indigo-600 hover:text-black"><FaTwitter /></a>
                 </div>
               </div>
