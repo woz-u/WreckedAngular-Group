@@ -23,9 +23,8 @@ const {products} = data;
   const deliveryPrice = itemsPrice > 150 ? 0 : 50;
   const totalPrice = itemsPrice + taxPrice + deliveryPrice;
   
-  function handleClick() {
-    <Showandhide></Showandhide>
-  }
+
+  const[toggle, setToggle] = useState(false)
   
   return (
     <div>
@@ -66,7 +65,7 @@ const {products} = data;
                             +
                         </button>
                         <button className="text-white bg-red-600 p-2 rounded-3xl" onClick={() => removeItem(item.id)}>&times;</button>
-                        <div className="">  {item.price}x{item.quantity} </div>
+                        <div className="">  ${item.price}x{item.quantity}</div>
 
                     </li>
                 ))}
@@ -93,66 +92,6 @@ const {products} = data;
               </>
             )}
             </div>
-
-            <Popover className="inset-x-0 flex flex-col-reverse text-sm font-medium text-white lg:hidden">
-              <div className="relative z-10 bg-gray-700 border-t border-white px-4 sm:px-6">
-                <div className="max-w-lg mx-auto ">
-                  <Popover.Button className="w-full flex items-center py-6 font-medium">
-                    <span className="text-white mr-auto">Total</span>
-                    <span className="text-white mr-2">$361.80</span>
-                    <ChevronUpIcon
-                      className="w-5 h-5 text-white"
-                      aria-hidden="true"
-                    />
-                  </Popover.Button>
-                </div>
-              </div>
-
-              <Transition.Root as="{Fragment}">
-                <div>
-                  <Transition.Child
-                    as="{Fragment}"
-                    enter="transition-opacity ease-linear duration-300"
-                    enterFrom="opacity-0"
-                    enterTo="opacity-100"
-                    leave="transition-opacity ease-linear duration-300"
-                    leaveFrom="opacity-100"
-                    leaveTo="opacity-0"
-                  >
-                    <Popover.Overlay className="fixed inset-0 bg-white bg-opacity-25" />
-                  </Transition.Child>
-
-                  <Transition.Child
-                    as="{Fragment}"
-                    enter="transition ease-in-out duration-300 transform"
-                    enterFrom="translate-y-full"
-                    enterTo="translate-y-0"
-                    leave="transition ease-in-out duration-300 transform"
-                    leaveFrom="translate-y-0"
-                    leaveTo="translate-y-full"
-                  >
-                    <Popover.Panel className="relative bg-gray-50 px-4 py-6 sm:px-6">
-                      <dl className="max-w-lg mx-auto space-y-6 ">
-                        <div className="flex items-center justify-between">
-                          <dt className="text-white">Subtotal</dt>
-                          <dd>$320.00</dd>
-                        </div>
-
-                        <div className="flex items-center justify-between">
-                          <dt className="text-white">Delivery</dt>
-                          <dd>$15.00</dd>
-                        </div>
-
-                        <div className="flex items-center justify-between">
-                          <dt className="text-white">Taxes</dt>
-                          <dd>$26.80</dd>
-                        </div>
-                      </dl>
-                    </Popover.Panel>
-                  </Transition.Child>
-                </div>
-              </Transition.Root>
-            </Popover>
           </div>
         </section>
 
@@ -386,12 +325,7 @@ const {products} = data;
             </section>
 
             <section aria-labelledby="billing-heading" className="mt-10">
-              <h2
-                id="billing-heading"
-                className="text-lg font-medium text-white"
-              >
-                Delivery information
-              </h2>
+
               
               <div className="mt-6 flex items-center">
                 <input
@@ -400,17 +334,19 @@ const {products} = data;
                   type="checkbox"
                   defaultChecked
                   className="h-4 w-4 border-white rounded text-indigo-600 focus:ring-indigo-500"
-                  onClick={handleClick}
+                  onClick={() => setToggle(!toggle)}
                 />
+                
                 <div className="ml-2">
                   <label
                     htmlFor="same-as-shipping"
                     className="text-sm font-medium text-white"
                   >
-                    Same as billing information
-                  </label>
+                    Delivery information same as billing information.
+                  </label> 
                 </div>
-              </div>
+              </div><br></br>
+              {toggle && (<Showandhide></Showandhide>)}
             </section>
             
 
