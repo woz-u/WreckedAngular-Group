@@ -132,7 +132,7 @@ const Navbar = () => {
               leaveFrom="translate-x-0"
               leaveTo="-translate-x-full"
             >
-              <Dialog.Panel className="relative max-w-xs w-full shadow-xl pb-12 flex flex-col overflow-y-auto bg-slate-700">
+              <Dialog.Panel className="relative max-w-xs w-full shadow-xl flex flex-col bg-slate-700">
                 <div className="px-4 pt-5 pb-2 flex">
                   <button
                     type="button"
@@ -193,52 +193,43 @@ const Navbar = () => {
                     ))}
                   </Tab.Panels>
                 </Tab.Group>
-                <div className=" py-2 px-4 space-y-6">
+                <div className="py-6 px-6 space-y-6">
                   {navigation.pages.map((page) => (
                     <div key={page.name} className="flow-root">
                       <a
                         href={page.href}
-                        className="-m-2 p-2 block font-medium text-slate-300 hover:text-indigo-500">
+                        className="block font-medium text-slate-300 hover:text-indigo-500">
                         {page.name}
                       </a>
                     </div>
                   ))}
                 </div>
-                <div className="py-3 px-4 space-y-6">
                   <div className="flow-root">
-                    <a
-                      href="/SignUp"
-                      className="-m-2 p-2 block font-medium text-slate-300 hover:text-indigo-500"
-                    >
-                      Create an account
-                    </a>
-                  </div>
-                  <div className="flow-root t">
                     {user?.email ? (
                       <div>
-                        <Link to="/" className="p-4 text-white hover:text-slate-300">
+                        
+                        <Link to="/" className="pl-6 block font-medium text-slate-300 hover:text-indigo-500">
                           Account
-                        </Link>
-                        <button onClick={handleSignOut}>Sign out</button>
+                        </Link><br></br>
+                        <button onClick={handleSignOut} className="pl-6 block font-medium text-slate-300 hover:text-indigo-500">Sign out</button>
                       </div>
                     ) : (
-                      <div className="hidden md:block">
+                      <div className="space-y-6">
                         <Link
                           to="/signin"
-                          className="p-4 text-white hover:text-slate-300"
+                          className=" pl-6 block font-medium text-slate-300 hover:text-indigo-500"
                         >
                           Sign In
                         </Link>
                         <Link
                           to="/signup"
-                          className="bg-button text-btnText px-5 py-2 ml-2 rounded-2xl shadow-lg hover:text-slate-300 text-white"
+                          className="pl-6 block font-medium text-slate-300 hover:text-indigo-500"
                         >
                           Create Account
                         </Link>
                       </div>
                     )}
                   </div>
-                </div>
                 <div className=" border-slate-400 py-6 px-4 space-y-6">
                 </div>
               </Dialog.Panel>
@@ -293,7 +284,7 @@ const Navbar = () => {
               <div className="flex items-center space-x-6">
                 {user?.email ? (
                   <div>
-                    <Link to="/account" className="text-sm font-medium text-white hover:text-gray-100 p-5">
+                    <Link to="/account" className="text-sm font-medium text-white hover:text-gray-100 pr-5">
                       Account
                     </Link>
                     <button className='text-sm font-medium text-white hover:text-gray-100' onClick={handleSignOut}>Sign out</button>
