@@ -53,7 +53,7 @@ function Footer() {
   };
 
   return (
-    <div>
+    <div className="border-t-4 border-slate-600" >
       <footer aria-labelledby="footer-heading" className="bg-gray-900">
         <h2 id="footer-heading" className="sr-only">
           Footer
@@ -145,8 +145,8 @@ function Footer() {
             </div>
           </div>
 
-          <div className="border-t border-gray-800 py-10">
-            <p className="text-sm text-gray-400 flex justify-center">
+          <div className="border-t border-indigo-600 py-10">
+            <p className="text-sm text-indigo-400 flex justify-center">
               Copyright &copy; 2021 BeHerd Company Inc.
             </p>
           </div>

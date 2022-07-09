@@ -1,5 +1,4 @@
-// importing components from react-router-dom package
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { CartProvider } from 'react-use-cart';
 import Home from "./Routes/Home";
 import AboutUs from "./Routes/AboutUs";
@@ -14,6 +13,7 @@ import SignIn from "./Routes/SignIn";
 import SignUp from "./Routes/SignUp";
 import Reviews from "./Routes/Reviews";
 import { AuthContextProvider } from "./context/AuthContext";
+import Account from './Routes/Account';
 
 function App() {
   return (
@@ -33,6 +33,7 @@ function App() {
               <Route path="/AboutUs" element={<AboutUs />} />
               <Route path="/Home" element={<Home />} />
               <Route path="/Reviews" element={<Reviews />} />
+              <Route path="/Account" element={<Account/>} />
             </Routes>
           <Footer />
         </CartProvider>
