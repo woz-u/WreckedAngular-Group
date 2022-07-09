@@ -2,13 +2,11 @@ import React from 'react'
 
 export default function Showandhide(props) {
   return (
-    <div>   <section aria-labelledby="shipping-heading" className="mt-10">
-    <h2
-      id="shipping-heading"
-      className="text-lg font-medium text-white"
-    >
-      Delivery address
-    </h2>
+    <div>   
+      <section aria-labelledby="shipping-heading" className="mt-4">
+          <h2 id="billing-heading" className="text-lg font-medium text-white">
+                Delivery information
+              </h2>
 
     <div className="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-3">
       <div className="sm:col-span-3">

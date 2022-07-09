@@ -77,3 +77,10 @@ const deleteReview = async (id) => {
 >
   Delete review
 </button>;
+
+
+{products.map((id) => (
+  <div key={id === 1}>
+    <button className="bg-blue-600 text-white hover:opacity-75 p-2 rounded-3xl" onClick={() => addItem(id)}>Add to cart</button>
+  </div>
+))}
