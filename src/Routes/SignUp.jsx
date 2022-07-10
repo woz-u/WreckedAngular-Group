@@ -78,10 +78,10 @@ const Signup = () => {
           <button className="w-full my-2 p-3 bg-indigo-700 text-btnText rounded-2xl shadow-xl text-white hover:bg-white hover:text-black">
             Create Account
           </button>
-        </form>
+        </form><br></br>
         <p className="my-4 text-white text-center">
           Already have an account?{" "}
-          <Link to="/signin" className="text-accent text-center">
+          <Link to="/signin" className="text-accent text-center hover:text-indigo-600">
             Sign in
           </Link>
         </p>

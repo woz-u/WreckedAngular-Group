@@ -47,12 +47,9 @@ const features = [
               </p>
               <br></br>
 
-              <button
-              onClick={() => addItem(cowPack)}
-              className="bg-blue-600 text-white hover:opacity-75 p-2 rounded-3xl"
-            >
-              Add to Cart
-            </button>
+              <button onClick={() => addItem(cowPack)} className="bg-blue-600 text-white hover:opacity-75 p-2 rounded-3xl">
+                Add to Cart
+              </button>
                 <dl className="mt-10 grid grid-cols-1 gap-y-10 gap-x-8 text-sm sm:grid-cols-2">
                 {features.map((feature) => (
                   <div key={feature.name}>
