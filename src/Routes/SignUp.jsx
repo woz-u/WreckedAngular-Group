@@ -25,22 +25,22 @@ const Signup = () => {
       });
   };
 
-  const logOut = () => {
-    signOut(auth)
-      .then(() => {
-        console.log("You logged out");
-      })
-      .catch((error) => {
-        console(error.message);
-      });
-  };
+  // const logOut = () => {
+  //   signOut(auth)
+  //     .then(() => {
+  //       console.log("You logged out");
+  //     })
+  //     .catch((error) => {
+  //       console(error.message);
+  //     });
+  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
     try {
       await signUp(email, password);
-      navigate("/account");
+      navigate("/Account");
     } catch (e) {
       setError(e.message);
       console.log(e.message);

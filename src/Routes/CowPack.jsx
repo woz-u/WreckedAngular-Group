@@ -23,6 +23,8 @@ const features = [
     const {product, onAdd} = props;
     const { addItem } = useCart();
     const {products} = data;
+    const cowPack = products[1];
+
     return (
       <div className="bg-white">
         <section aria-labelledby="features-heading" className="relative">

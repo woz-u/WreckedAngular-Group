@@ -23,6 +23,7 @@ const features = [
     const {product, onAdd} = props;
     const { addItem } = useCart();
     const {products} = data;
+    const madCow = products[3];
     return (
       <div className="bg-white">
         <section aria-labelledby="features-heading" className="relative">
@@ -45,9 +46,12 @@ const features = [
               </p>
               <br></br>
 
-              <button className="bg-blue-600 text-white hover:opacity-75 p-2 rounded-3xl">
-                Add to Cart
-              </button>
+              <button
+              onClick={() => addItem(madCow)}
+              className="bg-blue-600 text-white hover:opacity-75 p-2 rounded-3xl"
+            >
+              Add to Cart
+            </button>
                 <dl className="mt-10 grid grid-cols-1 gap-y-10 gap-x-8 text-sm sm:grid-cols-2">
                 {features.map((feature) => (
                   <div key={feature.name}>
