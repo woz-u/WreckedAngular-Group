@@ -2,14 +2,13 @@ import React, { useState } from "react";
 import { AiFillLock, AiOutlineMail } from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
 import { UserAuth } from "../context/AuthContext";
-import { signInWithPopup, signOut } from "firebase/auth";
+import { signInWithPopup } from "firebase/auth";
 import { auth, provider } from "../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { GoogleButton } from "react-google-button";
-import PasswordReset from "../Components/PasswordReset";
 
 const SignIn = () => {
-  const [user, loading] = useAuthState(auth);
+  const [user] = useAuthState(auth);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -26,15 +25,6 @@ const SignIn = () => {
       });
   };
 
-  const logOut = () => {
-    signOut(auth)
-      .then(() => {
-        console.log("You logged out");
-      })
-      .catch((error) => {
-        console(error.message);
-      });
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -42,8 +32,8 @@ const SignIn = () => {
     try {
       await signIn(email, password);
       navigate("/Account");
-    } catch (e) {
-      setError(e.message);
+    } catch (error) {
+      setError(error.message);
       console.log(e.message);
     }
   };
