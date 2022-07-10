@@ -1,21 +1,12 @@
-import React, { useState, useEffect } from "react";
-import { UserAuth } from "../context/AuthContext";
+import React from "react";
 import { Navigate } from "react-router-dom";
 import UserReview from "../Components/UserReview";
-import { async } from "@firebase/util";
-import {
-  addDoc,
-  collection,
-  deleteDoc,
-  getDocs,
-  updateDoc,
-  doc,
-  setDoc,
-} from "firebase/firestore";
-import { db } from "../firebase";
+import { auth } from "../firebase";
+import Delete from "../Components/Delete";
+import UserProfileInfo from "../Components/UserProfile";
 
 const Account = () => {
-  const { user, logout } = UserAuth();
+  const user = auth.currentUser;
 
   if (user) {
     return (
@@ -32,6 +23,7 @@ const Account = () => {
             </div>
           </div>
         </div>
+        <UserProfileInfo />
         <div className="flex justify-between items-center py-8 rounded-div">
           <div className="w-full min-h-[300px]">
             <h1 className="text-3xl font-bold py-8 text-center text-white">
@@ -39,37 +31,14 @@ const Account = () => {
             </h1>
             <div className="flex justify-center">
               <UserReview />
-              {/* <form>
-                <textarea
-                  className="min-h-[300px] min-w-[600px] max-w-[700px] bg-slate-300 border-indigo-600 rounded-md shadow-sm py-2 px-4 text-base placeholder-black focus:outline-none focus:border-white focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-indigo-600 resize text-black"
-                  placeholder="Please Write Us A Review"
-                ></textarea>
-                <div className="flex flex-row max-w-[120px] px-2 py-4 mx-auto justify-between sm:flex-row text-center relative right-16">
-                  <div className="">
-                    <button className="bg-blue-600 text-white hover:opacity-75 p-2 rounded-3xl">
-                      Create
-                    </button>
-                  </div>
-                  <div className="pl-5 pr-5">
-                    <button className="bg-blue-600 text-white hover:opacity-75 p-2 rounded-3xl">
-                      Update
-                    </button>
-                  </div>
-                  <div>
-                    <button className="bg-blue-600 text-white hover:opacity-75 p-2 rounded-3xl">
-                      Delete
-                    </button>
-                  </div>
-                </div>
-              </form> */}
             </div>
           </div>
         </div>
+        <Delete />
       </div>
     );
   } else {
     return <Navigate to="/signin" />;
   }
 };
-
 export default Account;
