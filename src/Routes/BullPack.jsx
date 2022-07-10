@@ -48,9 +48,7 @@ export default function BullPack(props) {
               Bull Pack
             </p>
             <p className="mt-4 text-gray-500">
-              This Package is the best of the best, this is perfect for someone
-              that you want to take over their entire yard to congratulate or
-              just give a good laugh to with 2 special messages.
+              This Package is perfect for someone that you want to take over their entire yard to congratulate or just give a good laugh to with 2 special messages.
             </p>
             <br></br>
 

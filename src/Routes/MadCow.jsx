@@ -62,6 +62,9 @@ const features = [
                   <a className="bg-blue-600 text-white hover:opacity-75 p-2 rounded-xl text-center" href="/BullPack">
                   Previous Package
                   </a>
+                  <a className="bg-blue-600 text-white hover:opacity-75 p-2 rounded-xl text-center" href="/CalfPack">
+                  Next Package
+                </a>
               </dl>
             </div>
           </div>

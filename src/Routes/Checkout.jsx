@@ -51,7 +51,7 @@ const {products} = data;
 
         <section
           aria-labelledby="summary-heading"
-          className="pt-16 pb-10 px-4 sm:px-6 lg:px-0 lg:pb-16 lg:bg-transparent lg:row-start-1 lg:col-start-2 bg-gray-700"
+          className="pt-16 pb-10 px-4 sm:px-6 lg:px-0 lg:pb-0 lg:bg-transparent lg:row-start-1 lg:col-start-2 bg-gray-700"
         >
           <div className="max-w-lg mx-auto lg:max-w-none bg-slate-700 pt-10 pb-10 pl-10 pr-10 rounded-xl border-4 border-white border-double">
             <div className="">

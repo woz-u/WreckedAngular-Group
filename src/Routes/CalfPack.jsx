@@ -66,6 +66,9 @@ export default function CalfPack(props) {
                   <dd className="mt-2 text-gray-500">{feature.description}</dd>
                 </div>
               ))}
+              <a className="bg-blue-600 text-white hover:opacity-75 p-2 rounded-xl text-center" href="/MadCow">
+                Previous Package
+              </a>
               <a className="bg-blue-600 text-white hover:opacity-75 p-2 rounded-xl text-center" href="/CowPack">
                 Next Package
               </a>
