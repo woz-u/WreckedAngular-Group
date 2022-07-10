@@ -27,10 +27,7 @@ export default function CalfPack(props) {
   const { products } = data;
 
 
-  const calfPack = products.filter(id => {
-    return id === 1
-  })
-  console.log(products.id)
+  const calfPack = products[0];
 
   return (
     <div className="bg-white">
@@ -56,13 +53,9 @@ export default function CalfPack(props) {
             <div>
               {}
             </div>
-            {products.map((p) => (
-                  <div key={p.id}>
-                    <button className="bg-blue-600 text-white hover:opacity-75 p-2 rounded-3xl" onClick={() => addItem(p)}>Add to cart</button>
-                  </div>
-                 ))}
-            <div key={null}>
-              <button onClick={() => addItem()} className="bg-blue-600 text-white hover:opacity-75 p-2 rounded-3xl">
+ 
+            <div>
+              <button onClick={() => addItem(calfPack)} className="bg-blue-600 text-white hover:opacity-75 p-2 rounded-3xl">
                 Add to Cart
               </button>
             </div>
