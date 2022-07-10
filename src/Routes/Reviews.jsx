@@ -65,7 +65,7 @@ export default function Reviews() {
             return (
               <div className="text-slate-200 border-indigo-600">
                 <h1 className="m-7"> Review Test : {reviews.review}</h1>
-                <button onClick={() => deleteReview(reviews.review)} >Delete Review</button> 
+                <button className="ml-6 text-slate-500 hover:text-indigo-700" onClick={() => deleteReview(reviews.review)} >Delete Review</button> 
               </div>
             );
           })}

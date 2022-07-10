@@ -15,16 +15,19 @@ const Account = () => {
           <div>
             <h1 className="text-3xl font-bold text-white text-center">
               Account
-            </h1>
+            </h1><br></br>
             <div>
               <p className="text-white text-center text-2xl">
                 Welcome, {user?.email}
-              </p>
+              </p><br></br>
+              <div className="flex justify-center">
+                <Delete />
+              </div>
             </div>
           </div>
         </div>
         <UserProfileInfo />
-        <div className="flex justify-between items-center py-8 rounded-div">
+        <div className="flex justify-between items-center py-4 rounded-div">
           <div className="w-full min-h-[300px]">
             <h1 className="text-3xl font-bold py-8 text-center text-white">
               Reviews
@@ -34,7 +37,6 @@ const Account = () => {
             </div>
           </div>
         </div>
-        <Delete />
       </div>
     );
   } else {
