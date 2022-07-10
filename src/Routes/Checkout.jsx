@@ -5,6 +5,9 @@ import { ChevronUpIcon } from "@heroicons/react/solid";
 import data from "./data";
 import Showandhide from "../Components/Showandhide";
 import { useCart } from 'react-use-cart';
+import { BiPlusCircle } from "react-icons/bi";
+import { BiMinusCircle } from "react-icons/bi";
+import { BiTrash } from "react-icons/bi";
 
 
 const {products} = data;
@@ -23,12 +26,15 @@ const {products} = data;
   const deliveryPrice = itemsPrice > 150 ? 0 : 50;
   const totalPrice = itemsPrice + taxPrice + deliveryPrice;
   
+  
 
   const[toggle, setToggle] = useState(false)
   
   return (
     <div>
-      
+      <div className="bg-slate-600 text-white text-center text-2xl pb-2">
+        Orders Over $150 Will Recieve Free Delivery!
+        </div>
     <div className="bg-slate-800">
       {/* Background color split screen for large screens */}
       <div
@@ -47,47 +53,58 @@ const {products} = data;
           aria-labelledby="summary-heading"
           className="pt-16 pb-10 px-4 sm:px-6 lg:px-0 lg:pb-16 lg:bg-transparent lg:row-start-1 lg:col-start-2 bg-gray-700"
         >
-          <div className="max-w-lg mx-auto lg:max-w-none bg-slate-700 pt-10 pb-10 pl-10 pr-10 rounded-xl border-4 border-indigo-600">
+          <div className="max-w-lg mx-auto lg:max-w-none bg-slate-700 pt-10 pb-10 pl-10 pr-10 rounded-xl border-4 border-white border-double">
+            <div className="">
             <h2 id="summary-heading" className="text-lg font-medium text-white">
               Order summary
             </h2>
+            <div className="text-right">
+            <h3 className="text-white align-right pb-2">Price</h3>
+            </div>
+            </div>
+            <hr></hr><br></br>
             
 
         <div className="text-white">
-          <ul >
+          <ul>
                 {items.map((item) => (
                     <li  key={item.id}>
-                        {item.quantity} x {item.name} &mdash;
-                        <button className="text-white bg-blue-600 p-2 rounded-3xl" onClick={() => updateItemQuantity(item.id, item.quantity - 1)}>
-                            -
-                        </button>
-                        <button className="text-white bg-blue-600 p-2 rounded-3xl" onClick={() => updateItemQuantity(item.id, item.quantity + 1)}>
-                            +
-                        </button>
-                        <button className="text-white bg-red-600 p-2 rounded-3xl" onClick={() => removeItem(item.id)}>&times;</button>
-                        <div className="">  ${item.price}x{item.quantity}</div>
+                      <div className="">
+                        {item.name} &nbsp; &nbsp;</div>
+                        <div className="text-right">  ${item.price} x {item.quantity} </div><br></br>
+                        <div className="text-right">
+                        <button className="text-white bg-indigo-600 p-2 rounded-3xl hover:opacity-50 text-2xl mt-6" onClick={() => updateItemQuantity(item.id, item.quantity - 1)}>
+                        <BiMinusCircle/>
+                        </button>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <button className="text-white bg-indigo-600 p-2 rounded-3xl hover:opacity-50 text-2xl mt-6" onClick={() => updateItemQuantity(item.id, item.quantity + 1)}>
+                        <BiPlusCircle/>
+                        </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <button className="text-white bg-slate-600 p-1 hover:bg-red-900 rounded " onClick={() => removeItem(item.id)}><BiTrash/></button>
+                        </div>
 
                     </li>
                 ))}
             </ul>
+            <br></br>
             {items.length !== 0 && (
               <>
-                <hr></hr>
-                <div className="row text-white">
+                <hr></hr><br></br>
+                <div className="row text-white text-left">
                   <div className="col-2">Items Price</div>
-                  <div className="col-1">${itemsPrice.toFixed(2)}</div>
+                  <div className="col-1 text-right">${itemsPrice.toFixed(2)}</div><br></br>
                 </div>
-                <div className="row text-white">
+                <div className="row text-white text-left">
                   <div className="col-2">Tax Price</div>
-                  <div className="col-1">${taxPrice.toFixed(2)}</div>
+                  <div className="col-1 text-right">${taxPrice.toFixed(2)}</div><br></br>
                 </div>
-                <div className="row text-white">
+                <div className="row text-white text-left">
                   <div className="col-2">Delivery Price</div>
-                  <div className="col-1">${deliveryPrice.toFixed(2)}</div>
+                  <div className="col-1 text-right">${deliveryPrice.toFixed(2)}</div><br></br>
                 </div>
-                <div className="row text-white">
+                <hr></hr><br></br>
+                <div className="row text-white text-left">
                   <div className="col-2"><strong>Total Price</strong></div>
-                  <div className="col-1"><strong>${totalPrice.toFixed(2)}</strong></div>
+                  <div className="col-1 text-right"><strong>${totalPrice.toFixed(2)}</strong></div>
                 </div>
               </>
             )}
@@ -96,7 +113,7 @@ const {products} = data;
         </section>
 
         <form className="pt-16 pb-36 px-4 sm:px-6 lg:pb-16 lg:px-0 lg:row-start-1 lg:col-start-1">
-          <div className="max-w-lg mx-auto lg:max-w-none bg-slate-700 p-10 rounded-xl border-4 border-indigo-600">
+          <div className="max-w-lg mx-auto lg:max-w-none bg-slate-700 p-10 rounded-xl border-4 border-white border-double">
             <section aria-labelledby="contact-info-heading">
               <h2
                 id="contact-info-heading"
