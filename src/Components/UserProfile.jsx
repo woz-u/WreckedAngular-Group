@@ -18,11 +18,11 @@ const UserProfileInfo = () => {
       });
   };
   return (
-    <div className="text-start ml-10">
-      <div className="text-white text-3xl mt-6 flex justify-start font-bold">
+    <div className="text-start">
+      <div className="text-white text-3xl mt-6 flex justify-center font-bold">
         <p>Welcome, {user.displayName} </p>
       </div>
-      <div className="mt-4">
+      <div className="mt-4 text-center">
         <input
           id="displayName"
           ref={nameRef}
@@ -31,7 +31,7 @@ const UserProfileInfo = () => {
           className="bg-slate-300 border-indigo-600 rounded-md shadow-sm py-2 px-4 text-base placeholder-black focus:outline-none focus:border-white focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-indigo-600 resize text-black"
         />
       </div>
-        <div className="">
+        <div className="text-center">
           <button onClick={updateName} className=" bg-blue-600 text-white hover:opacity-75 p-2 rounded-3xl mt-4 ">
           Update
           </button>

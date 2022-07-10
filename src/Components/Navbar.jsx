@@ -163,7 +163,7 @@ const Navbar = () => {
                       <Tab.Panel
                         key={category.name}
                         className="px-4 py-6 space-y-12 bg-slate-700">
-                        <div className="grid grid-cols-2 gap-x-4 gap-y-10">
+                        <div className="grid grid-cols-2 gap-x-5 gap-y-1">
                           {category.featured.map((item) => (
                             <div key={item.name} className="group relative">
                               <div className="aspect-w-1 aspect-h-1 rounded-md bg-gray-100 overflow-hidden group-hover:opacity-40">
@@ -181,11 +181,6 @@ const Navbar = () => {
                                 />
                                 {item.name}
                               </a>
-                              <p
-                                aria-hidden="true"
-                                className="mt-1 text-sm text-gray-400 hover:text-slate-300">
-                                Shop now
-                              </p>
                             </div>
                           ))}
                         </div>
@@ -193,12 +188,12 @@ const Navbar = () => {
                     ))}
                   </Tab.Panels>
                 </Tab.Group>
-                <div className="py-6 px-6 space-y-6">
+                <div className="">
                   {navigation.pages.map((page) => (
                     <div key={page.name} className="flow-root">
                       <a
                         href={page.href}
-                        className="block font-medium text-slate-300 hover:text-indigo-500">
+                        className="pl-2 pt-1 block font-medium text-slate-300 hover:text-indigo-500">
                         {page.name}
                       </a>
                     </div>
@@ -208,22 +203,22 @@ const Navbar = () => {
                     {user?.email ? (
                       <div>
                         
-                        <Link to="/" className="pl-6 block font-medium text-slate-300 hover:text-indigo-500">
+                        <Link to="/Account" className="pl-2 pt-1 block font-medium text-slate-300 hover:text-indigo-500">
                           Account
-                        </Link><br></br>
-                        <button onClick={handleSignOut} className="pl-6 block font-medium text-slate-300 hover:text-indigo-500">Sign out</button>
+                        </Link>
+                        <button onClick={handleSignOut} className="pl-2 pt-1 block font-medium text-slate-300 hover:text-indigo-500">Sign out</button>
                       </div>
                     ) : (
-                      <div className="space-y-6">
+                      <div className="">
                         <Link
                           to="/signin"
-                          className=" pl-6 block font-medium text-slate-300 hover:text-indigo-500"
+                          className=" pl-2 pt-1 block font-medium text-slate-300 hover:text-indigo-500"
                         >
                           Sign In
                         </Link>
                         <Link
                           to="/signup"
-                          className="pl-6 block font-medium text-slate-300 hover:text-indigo-500"
+                          className="pl-2 pt-1 block font-medium text-slate-300 hover:text-indigo-500"
                         >
                           Create Account
                         </Link>

@@ -3,9 +3,11 @@ import { db } from "../firebase";
 import { collection, addDoc } from "firebase/firestore";
 import {UserAuth} from '../context/AuthContext'
 
-export default function AddTodo() {
+
+export default function AddReview() {
   const [review, setReview] = useState("");
   const { user } = UserAuth();
+ 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -16,10 +18,10 @@ export default function AddTodo() {
     }
   };
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit }>
       <div>
-        <textarea
-          className="min-h-[300px] min-w-[600px] max-w-[700px] bg-slate-300 border-indigo-600 rounded-md shadow-sm py-2 px-4 text-base placeholder-black focus:outline-none focus:border-white focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-indigo-600 resize text-black"
+        <textarea 
+          className="min-h-[300px] sm-640 md-768 lg-1024 min-w-[300px] w-screen max-w-[700px] bg-slate-300 border-indigo-600 rounded-md shadow-sm py-2  text-base placeholder-black focus:outline-none focus:border-white focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-indigo-600 resize text-black"
           placeholder="Please Write Us A Review"
           type="text"
           value={review}

@@ -32,6 +32,7 @@ function Footer() {
     return setDoc(doc(db, 'NewsLetter', email), {
     });
   };
+  
 
   
   const [email, setEmail] = useState("");

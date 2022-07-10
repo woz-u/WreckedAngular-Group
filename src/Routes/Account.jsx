@@ -10,7 +10,7 @@ const Account = () => {
 
   if (user) {
     return (
-      <div className="bg-slate-800 pt-10">
+      <div className="bg-slate-800 pt-10 text-center">
         <div>
         <UserProfileInfo />
         </div>
@@ -26,14 +26,14 @@ const Account = () => {
         </div>
         <div className="items-center py-6 rounded-div">
           <div>
-            <h1 className="text-2xl font-bold text-white text-start ml-10 mb-4">
+            <h1 className="text-2xl font-bold text-white text-center mb-4">
               Account
             </h1>
             <div>
-              <p className="text-white ml-10 mb-5 text-lg text-start">
+              <p className="text-white mb-5 text-lg text-center">
                 {user?.email}
               </p>
-              <div className="flex justify-start ml-10">
+              <div className="flex justify-center">
                 <Delete />
               </div>
             </div>

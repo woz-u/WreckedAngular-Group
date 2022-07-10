@@ -63,8 +63,8 @@ export default function Reviews() {
             return (
               <div className="text-slate-200 border-indigo-600">
                 <h1 className="m-7"> Review Test : {reviews.review}</h1>
-                <button className="ml-6 text-slate-500 hover:text-indigo-700" onClick={() => deleteReview(reviews.id.review)} >Delete Review</button> 
-              </div>
+                <button className="ml-6 text-slate-800 hover:text-slate-800" onClick={() => deleteReview(reviews.id.review)} >Delete Review</button> 
+              </div> /* Need 2 Fix I hid the Delete Review Buttons in the background for now until functional; Tim */
             );
           })}
         </div>
