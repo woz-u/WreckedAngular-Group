@@ -79,9 +79,11 @@ const SignIn = () => {
             Sign in
           </button>
         </form>
-          <PasswordReset />
         <p className="my-4 text-white text-center">
-          Don't have an account? {' '}
+          <Link to="/ForgotPassword">Forgot Password?</Link>
+        </p>
+        <p className="my-4 text-white text-center">
+          Don't have an account?{" "}
           <Link to="/signup" className="text-accent text-center">
             Sign up
           </Link>

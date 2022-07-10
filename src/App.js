@@ -14,7 +14,8 @@ import SignUp from "./Routes/SignUp";
 import Reviews from "./Routes/Reviews";
 import { AuthContextProvider } from "./context/AuthContext";
 import Account from './Routes/Account';
-import PasswordReset from "./Components/PasswordReset";
+import ForgotPassword from './Routes/ForgotPassword';
+
 
 function App() {
   return (
@@ -31,7 +32,7 @@ function App() {
               <Route path="/MadCow" element={<MadCow />} />
               <Route path="/SignIn" element={<SignIn />} />
               <Route path="/SignUp" element={<SignUp />} />
-              <Route path="/PasswordReset" element={<PasswordReset/>} />
+              <Route path="/ForgotPassword" element={<ForgotPassword/>} />
               <Route path="/AboutUs" element={<AboutUs />} />
               <Route path="/Home" element={<Home />} />
               <Route path="/Reviews" element={<Reviews />} />
