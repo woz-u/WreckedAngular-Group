@@ -27,7 +27,7 @@ export default function AddTodo() {
         />
       </div>
       <div className="flex justify-center">
-        <button className="bg-blue-600 text-white hover:opacity-75 p-2 rounded-3xl">Create Review</button>
+        <button className="bg-blue-600 text-white hover:opacity-75 p-2 rounded-3xl mt-4">Create Review</button>
       </div>
     </form>
   );

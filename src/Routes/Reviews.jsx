@@ -8,6 +8,7 @@ import {
   getDocs,
   doc,
 } from "firebase/firestore";
+import { updateDoc } from "firebase/firestore";
 
 const reviews = [
   {
@@ -30,12 +31,12 @@ function classNames(...classes) {
 }
 
 export default function Reviews() {
-  const usersCollectionRef = collection(db, "reviews");
+  const reviewsCollectionRef = collection(db, "reviews");
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
     const getReviews = async () => {
-      const data = await getDocs(usersCollectionRef);
+      const data = await getDocs(reviewsCollectionRef);
       setReviews(data.docs.map((doc) => ({ ...doc.data() })));
     };
 
@@ -43,18 +44,28 @@ export default function Reviews() {
   }, []);
 
 
+  const reviewsPath = doc(db, 'reviews', `${reviews.review}`)
+  const deleteReview = async (passedid) => {
+    try {
+      const result = reviews.filter((review) => review.id !== passedid);
+      await updateDoc(reviewsPath, {
+        reviews: result
+      });
+    } catch (e) {
+      console.log(e.message);
+    }
+  };
+
   return (
     <div className="bg-slate-800 pb-40">
       <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
-        <h2 className="text-4xl font-medium text-white pl-6">
-          Recent reviews
-        </h2>
+        <h2 className="text-4xl font-medium text-white pl-6">Recent reviews</h2>
         <div className="mt-6 border-t border-b border-indigo-600 divide-y divide-indigo-600">
-          {/* <SavedReviews/> */}
           {reviews.map((reviews) => {
             return (
               <div className="text-slate-200 border-indigo-600">
                 <h1 className="m-7"> Review Test : {reviews.review}</h1>
+                <button onClick={() => deleteReview(reviews.review)} >Delete Review</button> 
               </div>
             );
           })}

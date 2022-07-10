@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import { AiFillLock, AiOutlineMail } from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
 import { UserAuth } from "../context/AuthContext";
-import {signInWithPopup, signOut} from 'firebase/auth';
-import {auth, provider} from '../firebase';
-import { useAuthState} from 'react-firebase-hooks/auth';
-import { GoogleButton } from 'react-google-button';
+import { signInWithPopup, signOut } from "firebase/auth";
+import { auth, provider } from "../firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { GoogleButton } from "react-google-button";
+import PasswordReset from "../Components/PasswordReset";
 
-const Signin = () => {
+const SignIn = () => {
   const [user, loading] = useAuthState(auth);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -17,31 +18,30 @@ const Signin = () => {
 
   const googleProvider = (e) => {
     signInWithPopup(auth, provider)
-    .then((result) =>{
-      console.log(result);
-      
-    }).catch((error) =>{
-      console.log(error.message);
-    })
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
   };
 
-
-  const logOut = () =>{
-    signOut(auth).then(() => {
-      console.log("You logged out");
-    
-    }).catch((error) =>{
-      console(error.message);
-    })
-  }
-
+  const logOut = () => {
+    signOut(auth)
+      .then(() => {
+        console.log("You logged out");
+      })
+      .catch((error) => {
+        console(error.message);
+      });
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
     try {
       await signIn(email, password);
-      navigate("/account");
+      navigate("/Account");
     } catch (e) {
       setError(e.message);
       console.log(e.message);
@@ -79,8 +79,9 @@ const Signin = () => {
             Sign in
           </button>
         </form>
+          <PasswordReset />
         <p className="my-4 text-white text-center">
-          Don't have an account?{" "}
+          Don't have an account? {' '}
           <Link to="/signup" className="text-accent text-center">
             Sign up
           </Link>
@@ -91,15 +92,13 @@ const Signin = () => {
               onClick={googleProvider}
               className="p-2 block font-medium text-white hover:cursor-pointer hover:text-indigo-700"
             >
-              <GoogleButton/>
+              <GoogleButton />
             </a>
-          ) : (
-           null
-          )}
+          ) : null}
         </div>
       </div>
     </div>
   );
 };
 
-export default Signin;
+export default SignIn;
