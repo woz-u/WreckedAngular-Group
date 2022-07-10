@@ -79,12 +79,12 @@ const SignIn = () => {
             Sign in
           </button>
         </form>
-        <div className="flex justify-start">
-          <PasswordReset />
-        </div>
         <p className="my-4 text-white text-center">
-          Don't have an account? {' '}
-          <Link to="/signup" className="text-accent text-center hover:text-indigo-600">
+          <Link to="/ForgotPassword">Forgot Password?</Link>
+        </p>
+        <p className="my-4 text-white text-center">
+          Don't have an account?{" "}
+          <Link to="/signup" className="text-accent text-center">
             Sign up
           </Link>
         </p>

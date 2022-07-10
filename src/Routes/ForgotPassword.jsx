@@ -1,9 +1,10 @@
 import { DialogActions, DialogContent, DialogContentText } from "@mui/material";
 import { useRef } from "react";
 import { UserAuth } from "../context/AuthContext";
-import { TextField } from "@mui/material";
+import EmailField from "../Inputs/EmailField";
+import SubmitButton from "../Inputs/SubmitButton";
 
-const PasswordReset = () => {
+const ForgotPassword = () => {
   const { setLoading, setAlert, setModal, modal, resetPassword } = UserAuth();
   const emailRef = useRef();
 
@@ -36,23 +37,13 @@ const PasswordReset = () => {
     <form onSubmit={handleSubmit}>
       <DialogContent dividers>
         <DialogContentText>Please enter your email address:</DialogContentText>
-        <TextField
-          autoFocus
-          margin="normal"
-          variant="standard"
-          id="email"
-          label="Email Address"
-          type="email"
-          fullWidth
-          required
-          inputRef={emailRef}
-        />
+        <EmailField {...{ emailRef }} />
       </DialogContent>
       <DialogActions>
-        <button type="submit">Submit</button>
+        <SubmitButton />
       </DialogActions>
     </form>
   );
 };
 
-export default PasswordReset;
+export default ForgotPassword;
