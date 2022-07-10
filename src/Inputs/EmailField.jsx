@@ -1,8 +1,7 @@
 import { TextField } from '@mui/material';
 
 const EmailField = ({ emailRef, defaultValue = '' }) => {
-  return (
-    <TextField
+  return (<TextField
       autoFocus
       margin="normal"
       variant="standard"
@@ -13,6 +12,7 @@ const EmailField = ({ emailRef, defaultValue = '' }) => {
       required
       inputRef={emailRef}
       defaultValue={defaultValue}
+      
     />
   );
 };

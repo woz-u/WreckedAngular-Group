@@ -34,14 +34,18 @@ const ForgotPassword = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="flex justify-evenly mt-14 mb-10">
+      <div>
       <DialogContent dividers>
         <DialogContentText>Please enter your email address:</DialogContentText>
         <EmailField {...{ emailRef }} />
       </DialogContent>
       <DialogActions>
+        <div className="mt-9 pb-24">
         <SubmitButton />
+        </div>
       </DialogActions>
+      </div>
     </form>
   );
 };
