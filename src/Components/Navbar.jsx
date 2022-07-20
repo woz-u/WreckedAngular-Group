@@ -12,12 +12,6 @@ import BeHerdLogo from "../Assets/BeHerdLogo.png";
 import { auth, provider } from "../firebase";
 import { signInWithPopup, signOut } from "firebase/auth";
 import { UserAuth } from "../context/AuthContext";
-import Advance from "../Assets/Advance.png";
-import Premium from "../Assets/Premium.png";
-import Revenge from "../Assets/Revenge.png";
-import Checkout from "../Routes/Checkout";
-import SignIn from "../Routes/SignIn";
-import SignUp from "../Routes/SignUp";
 import { useCart } from 'react-use-cart';
 
 const currencies = ["USD", "CAD"];

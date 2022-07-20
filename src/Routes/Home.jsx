@@ -1,6 +1,5 @@
 import React from "react";
 import BeHerd from "../Assets/BeHerdBackground.png";
-import { Link } from "react-router-dom";
 import FeaturedYard1 from "../Assets/FeaturedYard1.jpg";
 import FeaturedYard2 from "../Assets/FeaturedYard2.jpg";
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";

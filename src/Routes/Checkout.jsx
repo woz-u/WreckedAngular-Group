@@ -1,7 +1,4 @@
 import React, {useState, Component} from "react";
-import { Fragment } from "react";
-import { Popover, Transition } from "@headlessui/react";
-import { ChevronUpIcon } from "@heroicons/react/solid";
 import data from "./data";
 import Showandhide from "../Components/Showandhide";
 import { useCart } from 'react-use-cart';

@@ -1,4 +1,3 @@
-import Checkout from "./Checkout";
 import { useCart } from 'react-use-cart';
 import data from "./data";
 const features = [
