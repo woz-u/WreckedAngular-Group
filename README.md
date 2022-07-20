@@ -1,7 +1,7 @@
 ![Untitled design (5)](https://user-images.githubusercontent.com/94193381/180092167-fe50b56a-7573-42ee-990a-1375a7ab9c52.png)
 
 
-# Here is our <a href="https://beherdfirebase.web.app/" target="_blank">Live Demo!</a>
+# Here is our [Live Demo!](https://beherdfirebase.web.app/)
 
 
 
