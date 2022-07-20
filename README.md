@@ -1,9 +1,15 @@
-# Live Version
-https://beherdfirebase.web.app/
+![Untitled design (5)](https://user-images.githubusercontent.com/94193381/180092167-fe50b56a-7573-42ee-990a-1375a7ab9c52.png)
+
+
+# Here is our <a href="https://beherdfirebase.web.app/" target="_blank">Live Demo!</a>
 
 
 
-# Be Herd
+
+# Be Herd 
+
+![BeHerdHomePage](https://user-images.githubusercontent.com/94193381/180092716-571bb362-3f8f-4c4e-9065-3c88b1e4375d.jpg)
+
 
 Be Herd is the latest way to celebrate a birthday, anniversary, or any other special occasion in the most hilarious way. We want to help you celebrate any special occasion for that special person by filling their yard with a herd of cow lawn ordinates and your message congratulating them on the occasion. After several days (time depending on the package) we will go back and pick up the herd. If someone has moved their herd to your lawn, you have an opportunity to revenge them for a special price. Let your message Be Herd.
 
